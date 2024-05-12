@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Q2/Estadística/6. Població i mostra.md",
+                "file": "Q2/Estadística/5. Processos estocàstics.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Q2/Estadística/6. Població i mostra.md",
+                "file": "Q2/Estadística/5. Processos estocàstics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Q2/Estadística/6. Població i mostra.md",
+                "file": "Q2/Estadística/5. Processos estocàstics.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Q2/Estadística/6. Població i mostra.md"
+                "file": "Q2/Estadística/5. Processos estocàstics.md"
               }
             }
           },
@@ -218,6 +218,7 @@
   },
   "active": "2cabd977a55087c6",
   "lastOpenFiles": [
+    "Q2/Estadística/6. Població i mostra.md",
     "Q2/Física 2/5. Magnetodinàmica.md",
     "Q2/Física 2/4. Magnetostàtica.md",
     "Q2/Cálculo 2/6. Teoremas del cálculo integral.md",
@@ -232,7 +233,6 @@
     "Q2/Biofísica/Mathematical modeling in biomedical science.md",
     "Q2/Biofísica/2. Estàtica de fluids.md",
     "Q2/Biofísica/3. Dinàmica de fluids.md",
-    "Q2/Estadística/6. Població i mostra.md",
     "Images&Links/Pasted image 20240508094613.png",
     "Images&Links/Pasted image 20240506154320.png",
     "Q2/Biofísica/4. Introducció a la termodinàmica.md",
