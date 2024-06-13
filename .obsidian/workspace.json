@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1c370409362117c7",
+        "id": "d0538cd094e281ca",
         "type": "tabs",
         "children": [
           {
-            "id": "0a25d431f776adfe",
+            "id": "4ba98b7a0adac732",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,25 +20,25 @@
             }
           },
           {
-            "id": "db274f0e9ae525c1",
+            "id": "d35b6f0d213532e0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Q2/Computadors/1. Fonaments de la programació.md",
-                "mode": "source",
+                "file": "Q2/Estadística/5. Processos estocàstics.md",
+                "mode": "preview",
                 "source": false
               }
             }
           },
           {
-            "id": "cadaeb00f68ec244",
+            "id": "88051f6c10fe6e05",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Q2/Física 2/4. Magnetostàtica.md",
-                "mode": "source",
+                "file": "Q2/Cálculo 2/Elementos geométricos.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Q2/Física 2/4. Magnetostàtica.md",
+                "file": "Q2/Cálculo 2/Elementos geométricos.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Q2/Física 2/4. Magnetostàtica.md",
+                "file": "Q2/Cálculo 2/Elementos geométricos.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Q2/Física 2/4. Magnetostàtica.md"
+                "file": "Q2/Cálculo 2/Elementos geométricos.md"
               }
             }
           },
@@ -192,37 +192,37 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "cadaeb00f68ec244",
+  "active": "88051f6c10fe6e05",
   "lastOpenFiles": [
-    "Q2/Física 2/5. Magnetodinàmica.md",
-    "Q2/Física 2/4. Magnetostàtica.md",
-    "Q2/Cálculo 2/6. Teoremas del cálculo integral.md",
-    "Q2/Cálculo 2/Elementos geométricos.md",
-    "Q2/Computadors/Apunts Random pràctic.md",
-    "Q2/Computadors/1. Fonaments de la programació.md",
-    "Q2/Estadística/6. Població i mostra.md",
-    "Q2/Estadística/4. Suma de variables aleatòries.md",
-    "Q2/Cálculo 2/Computational Neuroscience.md",
-    "Q2/Biofísica/7. Models matemàtics.md",
+    "Q2/Cálculo 2/4. Aplicaciones del cálculo diferencial.md",
+    "Q2/Cálculo 2/3. Diferenciabilidad.md",
+    "Q2/Cálculo 2/2. Operaciones con funciones.md",
+    "Q2/Cálculo 2/1. Topologia.md",
     "Q2/Cálculo 2/5. Integración.md",
-    "Q2/Biofísica/5. Termodinàmica de processos irreversibles.md",
-    "Q2/Biofísica/4. Introducció a la termodinàmica.md",
+    "Q2/Cálculo 2/6. Teoremas del cálculo integral.md",
     "Q2/Estadística/5. Processos estocàstics.md",
+    "Q2/Biofísica/3. Dinàmica de fluids.md",
+    "Q2/Estadística/6. Població i mostra.md",
+    "Q2/Estadística/7. Estimació puntual.md",
+    "Q2/Biofísica/5. Termodinàmica de processos irreversibles.md",
+    "Q2/Biofísica/7. Models matemàtics.md",
+    "Q2/Biofísica/6. Sentits.md",
     "Q2/Física 2/1. Ones.md",
     "Q2/Física 2/3. Conductores y corriente.md",
-    "Q2/Cálculo 2/2. Operaciones con funciones.md",
-    "Q2/Cálculo 2/3. Diferenciabilidad.md",
-    "Q2/Cálculo 2/4. Aplicaciones del cálculo diferencial.md",
     "Q2/Física 2/2. Electromagnetismo.md",
-    "Q2/Biofísica/6. Sentits.md",
-    "Q2/Biofísica/Mathematical modeling in biomedical science.md",
-    "Q2/Biofísica/2. Estàtica de fluids.md",
-    "Q2/Biofísica/3. Dinàmica de fluids.md",
+    "Q2/Física 2/5. Magnetodinàmica.md",
+    "Q2/Física 2/4. Magnetostàtica.md",
+    "Q2/Computadors/1. Fonaments de la programació.md",
+    "Q2/Biofísica/8. Radiació.md",
+    "Q2/Biofísica/9. Física i medicina.md",
+    "Q2/Cálculo 2/Elementos geométricos.md",
+    "Q2/Computadors/Apunts Random pràctic.md",
+    "Q2/Estadística/4. Suma de variables aleatòries.md",
+    "Q2/Cálculo 2/Computational Neuroscience.md",
+    "Q2/Biofísica/4. Introducció a la termodinàmica.md",
     "Images&Links/Pasted image 20240508094613.png",
     "Images&Links/Pasted image 20240506154320.png",
     "Untitled/Untitled",
-    "LaTex Tester.md",
-    "2024-03-08.md",
     "Untitled.canvas",
     "Git Repository",
     "ordenacio_ins.py",
