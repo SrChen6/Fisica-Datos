@@ -11,11 +11,9 @@
             "id": "88051f6c10fe6e05",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Q2/Biofísica/1. Propietats dels materials.md",
-                "mode": "source",
-                "source": false
+                "file": "Schedule.png"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Q2/Biofísica/1. Propietats dels materials.md",
+                "file": "Schedule.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Q2/Biofísica/1. Propietats dels materials.md",
+                "file": "Schedule.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Q2/Biofísica/1. Propietats dels materials.md"
+                "file": "Schedule.png"
               }
             }
           },
@@ -169,17 +167,19 @@
   },
   "active": "33f00263c9e614fe",
   "lastOpenFiles": [
-    "Q3 - copia - copia/Teoria de la informació",
-    "Q3 - copia - copia/Senyals i sistemes",
-    "Q3 - copia - copia/Química inorgànica",
-    "Q3 - copia - copia/PiE 2",
-    "Q3 - copia - copia/Mètodes numèrics",
-    "Q3 - copia - copia/Bases de dades",
-    "Q3 - copia - copia/AP 3",
-    "Q3 - copia - copia",
+    "Q3/AP 3/xd.py",
+    "Q2/Biofísica/1. Propietats dels materials.md",
     "Q3 - copia/Teoria de la informació",
     "Q3 - copia/Senyals i sistemes",
     "Q3 - copia/Química inorgànica",
+    "Q3 - copia/PiE 2",
+    "Q3 - copia/Mètodes numèrics",
+    "Q3 - copia/Bases de dades",
+    "Q3 - copia/AP 3",
+    "Q3 - copia",
+    "Q3/Teoria de la informació",
+    "Q3/Senyals i sistemes",
+    "Schedule.png",
     "README.md",
     "Q2/Estadística/1. Espais de probabilitat.md",
     "Q2/Horari.md",
@@ -189,7 +189,6 @@
     "Q2/Cálculo 2/3. Diferenciabilidad.md",
     "Q2/Cálculo 2/2. Operaciones con funciones.md",
     "Q2/Cálculo 2/1. Topologia.md",
-    "Q2/Biofísica/1. Propietats dels materials.md",
     "Q2/Biofísica/Computational Neuroscience.md",
     "Q2/Cálculo 2/Elementos geométricos.md",
     "Q2/Computadors/4. Computadors i els seus elements.md",
@@ -215,7 +214,6 @@
     "Images&Links/Pasted image 20240311152556.png",
     "Images&Links/Pasted image 20240307164234.png",
     "Images&Links/Pasted image 20240219154912.png",
-    "Images&Links/Pasted image 20240219174757.png",
     "Untitled 1.canvas"
   ]
 }
