@@ -11,9 +11,11 @@
             "id": "88051f6c10fe6e05",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Schedule.png"
+                "file": "Q2/Biofísica/1. Propietats dels materials.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Schedule.png",
+                "file": "Q2/Biofísica/1. Propietats dels materials.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Schedule.png",
+                "file": "Q2/Biofísica/1. Propietats dels materials.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Schedule.png"
+                "file": "Q2/Biofísica/1. Propietats dels materials.md"
               }
             }
           },
@@ -165,8 +167,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "33f00263c9e614fe",
+  "active": "88051f6c10fe6e05",
   "lastOpenFiles": [
+    "Schedule.png",
     "Q3/AP 3/xd.py",
     "Q2/Biofísica/1. Propietats dels materials.md",
     "Q3 - copia/Teoria de la informació",
@@ -178,8 +181,6 @@
     "Q3 - copia/AP 3",
     "Q3 - copia",
     "Q3/Teoria de la informació",
-    "Q3/Senyals i sistemes",
-    "Schedule.png",
     "README.md",
     "Q2/Estadística/1. Espais de probabilitat.md",
     "Q2/Horari.md",
