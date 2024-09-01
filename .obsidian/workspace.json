@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Q2/Biofísica/1. Propietats dels materials.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Q2/Biofísica/1. Propietats dels materials.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "Q2/Biofísica/1. Propietats dels materials.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "Q2/Biofísica/1. Propietats dels materials.md"
               }
             }
           },
@@ -167,18 +167,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "88051f6c10fe6e05",
+  "active": "33f00263c9e614fe",
   "lastOpenFiles": [
+    "Q3 - copia - copia/Teoria de la informació",
+    "Q3 - copia - copia/Senyals i sistemes",
+    "Q3 - copia - copia/Química inorgànica",
+    "Q3 - copia - copia/PiE 2",
+    "Q3 - copia - copia/Mètodes numèrics",
+    "Q3 - copia - copia/Bases de dades",
+    "Q3 - copia - copia/AP 3",
+    "Q3 - copia - copia",
+    "Q3 - copia/Teoria de la informació",
+    "Q3 - copia/Senyals i sistemes",
+    "Q3 - copia/Química inorgànica",
+    "README.md",
     "Q2/Estadística/1. Espais de probabilitat.md",
     "Q2/Horari.md",
-    "Q3/PiE 2",
-    "Q3/AP 3",
-    "Q3/Bases de dades",
-    "Q3/Senyals i sistemes",
-    "Q3/Teoria de la informació",
-    "Q3/Mètodes numèrics",
-    "Q3/Química inorgànica",
-    "Q3",
     "Q2/Cálculo 2/6. Teoremas del cálculo integral.md",
     "Q2/Cálculo 2/5. Integración.md",
     "Q2/Cálculo 2/4. Aplicaciones del cálculo diferencial.md",
@@ -201,13 +205,9 @@
     "Q2/Física 2/2. Electromagnetismo.md",
     "Q2/Física 2/5. Magnetodinàmica.md",
     "Q2/Física 2/4. Magnetostàtica.md",
-    "Q2/Computadors/1. Fonaments de la programació.md",
-    "Q2/Biofísica/8. Radiació.md",
     "Images&Links/Pasted image 20240508094613.png",
     "Images&Links/Pasted image 20240506154320.png",
-    "Untitled/Untitled",
     "Untitled.canvas",
-    "Git Repository",
     "Images&Links/SmartSelect_20240315_133148_Samsung Notes.jpg",
     "Images&Links/Pasted image 20240404153241.png",
     "Images&Links/Pasted image 20240311152554.png",
