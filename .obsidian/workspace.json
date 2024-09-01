@@ -8,43 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "4ba98b7a0adac732",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Q2/Cálculo 2/6. Teoremas del cálculo integral.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d35b6f0d213532e0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Q2/Estadística/5. Processos estocàstics.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "88051f6c10fe6e05",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Q2/Cálculo 2/Elementos geométricos.md",
-                "mode": "preview",
+                "file": "README.md",
+                "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Q2/Cálculo 2/Elementos geométricos.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Q2/Cálculo 2/Elementos geométricos.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Q2/Cálculo 2/Elementos geométricos.md"
+                "file": "README.md"
               }
             }
           },
@@ -194,12 +169,26 @@
   },
   "active": "88051f6c10fe6e05",
   "lastOpenFiles": [
+    "Q2/Estadística/1. Espais de probabilitat.md",
+    "Q2/Horari.md",
+    "Q3/PiE 2",
+    "Q3/AP 3",
+    "Q3/Bases de dades",
+    "Q3/Senyals i sistemes",
+    "Q3/Teoria de la informació",
+    "Q3/Mètodes numèrics",
+    "Q3/Química inorgànica",
+    "Q3",
+    "Q2/Cálculo 2/6. Teoremas del cálculo integral.md",
+    "Q2/Cálculo 2/5. Integración.md",
     "Q2/Cálculo 2/4. Aplicaciones del cálculo diferencial.md",
     "Q2/Cálculo 2/3. Diferenciabilidad.md",
     "Q2/Cálculo 2/2. Operaciones con funciones.md",
     "Q2/Cálculo 2/1. Topologia.md",
-    "Q2/Cálculo 2/5. Integración.md",
-    "Q2/Cálculo 2/6. Teoremas del cálculo integral.md",
+    "Q2/Biofísica/1. Propietats dels materials.md",
+    "Q2/Biofísica/Computational Neuroscience.md",
+    "Q2/Cálculo 2/Elementos geométricos.md",
+    "Q2/Computadors/4. Computadors i els seus elements.md",
     "Q2/Estadística/5. Processos estocàstics.md",
     "Q2/Biofísica/3. Dinàmica de fluids.md",
     "Q2/Estadística/6. Població i mostra.md",
@@ -214,25 +203,11 @@
     "Q2/Física 2/4. Magnetostàtica.md",
     "Q2/Computadors/1. Fonaments de la programació.md",
     "Q2/Biofísica/8. Radiació.md",
-    "Q2/Biofísica/9. Física i medicina.md",
-    "Q2/Cálculo 2/Elementos geométricos.md",
-    "Q2/Computadors/Apunts Random pràctic.md",
-    "Q2/Estadística/4. Suma de variables aleatòries.md",
-    "Q2/Cálculo 2/Computational Neuroscience.md",
-    "Q2/Biofísica/4. Introducció a la termodinàmica.md",
     "Images&Links/Pasted image 20240508094613.png",
     "Images&Links/Pasted image 20240506154320.png",
     "Untitled/Untitled",
     "Untitled.canvas",
     "Git Repository",
-    "ordenacio_ins.py",
-    "ordenacio.py",
-    "fusio.py",
-    "factorial.py",
-    "cerca.py",
-    "cerca.bin.py",
-    "Q2/Física 2",
-    "Q2/Estadística",
     "Images&Links/SmartSelect_20240315_133148_Samsung Notes.jpg",
     "Images&Links/Pasted image 20240404153241.png",
     "Images&Links/Pasted image 20240311152554.png",
