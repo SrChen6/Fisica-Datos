@@ -4,16 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "d0538cd094e281ca",
+        "id": "761e974333dea9dd",
         "type": "tabs",
         "children": [
           {
-            "id": "88051f6c10fe6e05",
+            "id": "62d3ca83c547cf8e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Q2/Biofísica/1. Propietats dels materials.md",
+                "file": "Q2/PiE/2. Variables aleatories.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3f83afe79ab1ebb7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Q2/PiE/7. Estimació puntual.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "nabla",
+                "query": "poisson",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Q2/Biofísica/1. Propietats dels materials.md",
+                "file": "Q2/PiE/2. Variables aleatories.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Q2/Biofísica/1. Propietats dels materials.md",
+                "file": "Q2/PiE/2. Variables aleatories.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Q2/Biofísica/1. Propietats dels materials.md"
+                "file": "Q2/PiE/2. Variables aleatories.md"
               }
             }
           },
@@ -167,22 +179,41 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "88051f6c10fe6e05",
+  "active": "62d3ca83c547cf8e",
   "lastOpenFiles": [
-    "Schedule.png",
-    "Q3/AP 3/xd.py",
+    "Q3/PiE 2/1. Introducció a la estadística.md",
+    "Q2/PiE/7. Estimació puntual.md",
+    "Q3/PiE 2/PiE2Nova-Exercicis(1).pdf",
+    "Q2/PiE/6. Població i mostra.md",
+    "Q3/Química inorgànica/0. Quàntica.md",
+    "Q3/Teoria de la informació/1. Codis i codificació.md",
+    "Q3/Horari Q3.csmo",
+    "Q3/Horari Q3.png",
+    "Q3/Schedule(2).csmo",
+    "Q3/Schedule(2).png",
+    "Q3/Horari Personal.csmo",
+    "Q3/Horari Personal.png",
+    "Q3/Schedule(3).png",
+    "Q3/Schedule(3).csmo",
+    "Schedule(3).png",
+    "Schedule(3).csmo",
+    "Schedule(2).png",
+    "Schedule(2).csmo",
+    "Q3/Senyals i sistemes/1. Señales y sistemas.md",
+    "Q3/Química inorgànica/1. Sistema periódico de los elementos.md",
+    "Q3/Mètodes numèrics/1. Equacions transcendentals.md",
+    "Q3/Bases de dades/0. Introducció.md",
+    "Q3/AP 3/1. Tractabilitat.md",
+    "Q2/PiE/2. Variables aleatories.md",
+    "Q3/Mètodes numèrics/Fundamentals of Numerical Mathematics for Physicists and Engineers - 2020 - Meseguer.pdf",
+    "Q3/Teoria de la informació/Apunts-v4.pdf",
+    "Q3/Senyals i sistemes/Ejercicios_DSE_24_v1.pdf",
+    "Q3/Senyals i sistemes/0. Introducción.md",
+    "Q3/Teoria de la informació/0. Introducció.md",
+    "Q2/PiE/1. Espais de probabilitat.md",
     "Q2/Biofísica/1. Propietats dels materials.md",
-    "Q3 - copia/Teoria de la informació",
-    "Q3 - copia/Senyals i sistemes",
-    "Q3 - copia/Química inorgànica",
-    "Q3 - copia/PiE 2",
-    "Q3 - copia/Mètodes numèrics",
-    "Q3 - copia/Bases de dades",
-    "Q3 - copia/AP 3",
-    "Q3 - copia",
-    "Q3/Teoria de la informació",
+    "Schedule.png",
     "README.md",
-    "Q2/Estadística/1. Espais de probabilitat.md",
     "Q2/Horari.md",
     "Q2/Cálculo 2/6. Teoremas del cálculo integral.md",
     "Q2/Cálculo 2/5. Integración.md",
@@ -193,28 +224,10 @@
     "Q2/Biofísica/Computational Neuroscience.md",
     "Q2/Cálculo 2/Elementos geométricos.md",
     "Q2/Computadors/4. Computadors i els seus elements.md",
-    "Q2/Estadística/5. Processos estocàstics.md",
-    "Q2/Biofísica/3. Dinàmica de fluids.md",
-    "Q2/Estadística/6. Població i mostra.md",
-    "Q2/Estadística/7. Estimació puntual.md",
-    "Q2/Biofísica/5. Termodinàmica de processos irreversibles.md",
-    "Q2/Biofísica/7. Models matemàtics.md",
-    "Q2/Biofísica/6. Sentits.md",
-    "Q2/Física 2/1. Ones.md",
-    "Q2/Física 2/3. Conductores y corriente.md",
-    "Q2/Física 2/2. Electromagnetismo.md",
-    "Q2/Física 2/5. Magnetodinàmica.md",
-    "Q2/Física 2/4. Magnetostàtica.md",
     "Images&Links/Pasted image 20240508094613.png",
     "Images&Links/Pasted image 20240506154320.png",
     "Untitled.canvas",
     "Images&Links/SmartSelect_20240315_133148_Samsung Notes.jpg",
-    "Images&Links/Pasted image 20240404153241.png",
-    "Images&Links/Pasted image 20240311152554.png",
-    "Images&Links/Pasted image 20240318150552.png",
-    "Images&Links/Pasted image 20240311152556.png",
-    "Images&Links/Pasted image 20240307164234.png",
-    "Images&Links/Pasted image 20240219154912.png",
     "Untitled 1.canvas"
   ]
 }
