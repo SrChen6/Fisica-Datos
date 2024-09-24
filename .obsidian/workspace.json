@@ -8,30 +8,43 @@
         "type": "tabs",
         "children": [
           {
-            "id": "62d3ca83c547cf8e",
+            "id": "5460d4187d5d8a9b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Q2/PiE/2. Variables aleatories.md",
+                "file": "Q2/PiE/1. Espais de probabilitat.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "3f83afe79ab1ebb7",
+            "id": "5cca45155ee4311a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Q2/PiE/7. Estimació puntual.md",
+                "file": "Q3/Senyals i sistemes/1. Señales y sistemas.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "28fe863193c0a33e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Q3/Química inorgànica/0. Quàntica.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -60,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "poisson",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -97,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Q2/PiE/2. Variables aleatories.md",
+                "file": "Q3/Química inorgànica/0. Quàntica.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Q2/PiE/2. Variables aleatories.md",
+                "file": "Q3/Química inorgànica/0. Quàntica.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Q2/PiE/2. Variables aleatories.md"
+                "file": "Q3/Química inorgànica/0. Quàntica.md"
               }
             }
           },
@@ -179,51 +192,50 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "62d3ca83c547cf8e",
+  "active": "28fe863193c0a33e",
   "lastOpenFiles": [
-    "Q3/PiE 2/1. Introducció a la estadística.md",
-    "Q2/PiE/7. Estimació puntual.md",
-    "Q3/PiE 2/PiE2Nova-Exercicis(1).pdf",
-    "Q2/PiE/6. Població i mostra.md",
-    "Q3/Química inorgànica/0. Quàntica.md",
-    "Q3/Teoria de la informació/1. Codis i codificació.md",
-    "Q3/Horari Q3.csmo",
-    "Q3/Horari Q3.png",
-    "Q3/Schedule(2).csmo",
-    "Q3/Schedule(2).png",
-    "Q3/Horari Personal.csmo",
-    "Q3/Horari Personal.png",
-    "Q3/Schedule(3).png",
-    "Q3/Schedule(3).csmo",
-    "Schedule(3).png",
-    "Schedule(3).csmo",
-    "Schedule(2).png",
-    "Schedule(2).csmo",
-    "Q3/Senyals i sistemes/1. Señales y sistemas.md",
-    "Q3/Química inorgànica/1. Sistema periódico de los elementos.md",
     "Q3/Mètodes numèrics/1. Equacions transcendentals.md",
+    "Q3/PiE 2/R code/test.R",
+    "Q3/PiE 2/R code",
+    "Q3/PiE 2/Nueva carpeta",
+    "Q3/Senyals i sistemes/2. Convolución.md",
+    "Q3/Mètodes numèrics/Meseguer_Fundamentals_of_Numerical_Mathematics_Wiley_2020.pdf",
+    "Q3/Senyals i sistemes/1. Señales y sistemas.md",
+    "Q3/Química inorgànica/0. Quàntica.md",
+    "Q3/Química inorgànica/2. Enlace covalente.md",
+    "Q3/Teoria de la informació/2. Informació i entropia.md",
+    "Q2/PiE/1. Espais de probabilitat.md",
+    "Q2/PiE/3. Vectors aleatoris.md",
+    "Q2/PiE/4. Suma de variables aleatòries.md",
+    "Q3/Química inorgànica/1. Sistema periódico de los elementos.md",
+    "Q3/PiE 2/1. Introducció a la estadística.md",
+    "Q3/Bases de dades/2. Model relacional.md",
+    "Q3/Bases de dades/4. Components lògiques d'una base de dades.md",
     "Q3/Bases de dades/0. Introducció.md",
     "Q3/AP 3/1. Tractabilitat.md",
+    "Q3/AP 3/Jutge/exh_search/hello_world.exe",
+    "Q3/AP 3/Jutge/exh_search/hello_world.cc",
+    "Q3/AP 3/Jutge/exh_search/subconjunts(2).exe",
+    "Q3/AP 3/Jutge/exh_search/subconjuntx(2).exe",
+    "Q3/AP 3/Jutge/exh_search/subconjunts(2).cc",
+    "Q3/AP 3/Jutge/exh_search",
+    "Q3/Teoria de la informació/1. Codis i codificació.md",
+    "Q2/Física 2/1.5. Sistemas de coordenades.md",
+    "Q2/Física 2/2. Electromagnetismo.md",
+    "Q2/Física 2/3. Conductores y corriente.md",
+    "Q2/Cálculo 2/6. Teoremas del cálculo integral.md",
+    "Q2/PiE/7. Estimació puntual.md",
     "Q2/PiE/2. Variables aleatories.md",
-    "Q3/Mètodes numèrics/Fundamentals of Numerical Mathematics for Physicists and Engineers - 2020 - Meseguer.pdf",
-    "Q3/Teoria de la informació/Apunts-v4.pdf",
-    "Q3/Senyals i sistemes/Ejercicios_DSE_24_v1.pdf",
+    "Q2/PiE/6. Població i mostra.md",
+    "Q3/Horari Q3.png",
+    "Q3/Schedule(2).png",
+    "Q3/Horari Personal.png",
+    "Q3/Schedule(3).png",
+    "Schedule(3).png",
+    "Schedule(2).png",
     "Q3/Senyals i sistemes/0. Introducción.md",
     "Q3/Teoria de la informació/0. Introducció.md",
-    "Q2/PiE/1. Espais de probabilitat.md",
-    "Q2/Biofísica/1. Propietats dels materials.md",
     "Schedule.png",
-    "README.md",
-    "Q2/Horari.md",
-    "Q2/Cálculo 2/6. Teoremas del cálculo integral.md",
-    "Q2/Cálculo 2/5. Integración.md",
-    "Q2/Cálculo 2/4. Aplicaciones del cálculo diferencial.md",
-    "Q2/Cálculo 2/3. Diferenciabilidad.md",
-    "Q2/Cálculo 2/2. Operaciones con funciones.md",
-    "Q2/Cálculo 2/1. Topologia.md",
-    "Q2/Biofísica/Computational Neuroscience.md",
-    "Q2/Cálculo 2/Elementos geométricos.md",
-    "Q2/Computadors/4. Computadors i els seus elements.md",
     "Images&Links/Pasted image 20240508094613.png",
     "Images&Links/Pasted image 20240506154320.png",
     "Untitled.canvas",

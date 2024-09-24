@@ -1,0 +1,1 @@
+disp(input('first number: ')*input('second number: '));
