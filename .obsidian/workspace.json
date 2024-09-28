@@ -4,47 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "761e974333dea9dd",
+        "id": "f199f09a8acae07e",
         "type": "tabs",
         "children": [
           {
-            "id": "5460d4187d5d8a9b",
+            "id": "edfa42dd5c6a9f67",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Q2/PiE/1. Espais de probabilitat.md",
-                "mode": "source",
+                "file": "Q3/Mètodes numèrics/1. Equacions transcendentals.md",
+                "mode": "preview",
                 "source": false
               }
             }
           },
           {
-            "id": "5cca45155ee4311a",
+            "id": "b32dc1f4ca69041b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Q3/Senyals i sistemes/1. Señales y sistemas.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "28fe863193c0a33e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Q3/Química inorgànica/0. Quàntica.md",
+                "file": "Q3/Química inorgànica/2. Enlace covalente.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Q3/Química inorgànica/0. Quàntica.md",
+                "file": "Q3/Química inorgànica/2. Enlace covalente.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Q3/Química inorgànica/0. Quàntica.md",
+                "file": "Q3/Química inorgànica/2. Enlace covalente.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Q3/Química inorgànica/0. Quàntica.md"
+                "file": "Q3/Química inorgànica/2. Enlace covalente.md"
               }
             }
           },
@@ -192,27 +180,28 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "28fe863193c0a33e",
+  "active": "b32dc1f4ca69041b",
   "lastOpenFiles": [
+    "Q3/Teoria de la informació/2. Informació i entropia.md",
+    "Q3/Química inorgànica/2. Enlace covalente.md",
+    "Q3/Mètodes numèrics/2. Interpolación polinómica.md",
     "Q3/Mètodes numèrics/1. Equacions transcendentals.md",
+    "Q3/Bases de dades/4. Components lògiques d'una base de dades.md",
+    "Q3/AP 3/1. Tractabilitat.md",
+    "Q3/Química inorgànica/0. Quàntica.md",
     "Q3/PiE 2/R code/test.R",
     "Q3/PiE 2/R code",
     "Q3/PiE 2/Nueva carpeta",
     "Q3/Senyals i sistemes/2. Convolución.md",
     "Q3/Mètodes numèrics/Meseguer_Fundamentals_of_Numerical_Mathematics_Wiley_2020.pdf",
     "Q3/Senyals i sistemes/1. Señales y sistemas.md",
-    "Q3/Química inorgànica/0. Quàntica.md",
-    "Q3/Química inorgànica/2. Enlace covalente.md",
-    "Q3/Teoria de la informació/2. Informació i entropia.md",
     "Q2/PiE/1. Espais de probabilitat.md",
     "Q2/PiE/3. Vectors aleatoris.md",
     "Q2/PiE/4. Suma de variables aleatòries.md",
     "Q3/Química inorgànica/1. Sistema periódico de los elementos.md",
     "Q3/PiE 2/1. Introducció a la estadística.md",
     "Q3/Bases de dades/2. Model relacional.md",
-    "Q3/Bases de dades/4. Components lògiques d'una base de dades.md",
     "Q3/Bases de dades/0. Introducció.md",
-    "Q3/AP 3/1. Tractabilitat.md",
     "Q3/AP 3/Jutge/exh_search/hello_world.exe",
     "Q3/AP 3/Jutge/exh_search/hello_world.cc",
     "Q3/AP 3/Jutge/exh_search/subconjunts(2).exe",
