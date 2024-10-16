@@ -1,0 +1,39 @@
+---
+title: "ex10"
+author: "Haokang Chen"
+date: "2024-10-14"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+# Apartat 1
+m = rnorm(20, 175, 10)
+
+# Apartat 2
+mitjana = mean(m)
+variancia = var(m)
+desv_std = sqrt(variancia)
+
+# Apartat 3
+IC_95 = c(mitjana-qnorm(0.025, lower.tail=FALSE)*10/sqrt(20), mitjana+qnorm(0.025, lower.tail=FALSE)*10/sqrt(20))
+print(IC_95)
+
+# Apartat 4
+IC_99 = c(mitjana-qnorm(0.005, lower.tail=FALSE)*10/sqrt(20), mitjana+qnorm(0.005, lower.tail=FALSE)*10/sqrt(20))
+print(IC_99)
+
+#Apartat 5
+IC_95_sigma = c(mitjana-qt(0.025, 19, lower.tail = FALSE)*desv_std/sqrt(20), mitjana+qt(0.025, 19, lower.tail = FALSE)*desv_std/sqrt(20))
+print(IC_95_sigma)
+
+# Alternativament, R calcula automàticament l'interval ambq
+t.test(m)
+
+```
+
+

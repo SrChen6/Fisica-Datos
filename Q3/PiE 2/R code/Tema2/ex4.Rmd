@@ -1,0 +1,41 @@
+---
+title: "ex4"
+author: "Haokang Chen"
+date: "2024-09-30"
+output: pdf_document
+---
+```{r}
+mostra1 = rf(100, 3,6)
+mostra1
+mean(mostra1)
+var(mostra1)
+hist(mostra1)
+plot(density(mostra1))
+```
+
+```{r}
+pf(3.5, 3, 6)
+```
+
+```{r}
+qf(0.8, 3, 6)
+```
+```{r}
+qf(.95, 5, 10)
+qf(.05, 10, 5)
+qf(.05, 10, 5)^-1
+
+```
+
+
+```{r}
+qf(.5, 10, 10)
+qf(.5, 25, 25)
+```
+
+
+```{r}
+y = rnorm(50)
+hist(y, xlim=c(-3, 3), prob=T)
+curve(dnorm, col="red", add=T)
+```

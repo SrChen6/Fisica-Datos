@@ -1,0 +1,58 @@
+---
+title: "PiE2 Entregable 1"
+author: "Ferran Alia, Haokang Chen"
+date: "2024-10-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Exercici 1
+
+La funció de distribució d'una distribució Gamma és $$f(X=x)=\frac 1{\Gamma(\alpha)\beta^\alpha}x^{\alpha-1}e^{-\frac x \beta}$$ on se'ns imposa 
+que $\alpha = M= 2$.
+
+```{r}
+al=2
+```
+Suposem una mostra $x=(x_1 ,\dots,x_n)$.
+
+## Apartat a
+L'estimador de $\beta$ s'anomenarà $\hat\beta$, que es pot trobar de dos maneres:
+
+### Moments
+Sabent que $E(X)=\alpha·\beta$:
+$$m_1 =\frac 1 n\sum_{i=1}^n x_i=\alpha\beta\implies\beta=\frac 1{n\alpha}\sum_{i=1}^nx_i\implies\hat\beta=\frac{\overline x}{\alpha}$$ per tant 
+l'estimador per moments de $\beta$ és $\hat\beta=\frac{\overline x}{\alpha}$
+
+### Màxima versemblança
+La funció de verosimilitud és $$L(x)=\mathbb P(X_1=x_1,\dots,X_n=x_n)$$
+
+Sabent que les mostres són independents: $$L(X)=\prod_{i=1}^n\mathbb P(X_i=x_i)$$
+
+Per facilitat les operacions, apliquem el logaritme a la funció (no mou la 
+coordenada x del màxim): $$l(X)=\sum_{i=1}^n\log\left(\frac 1{\Gamma(\alpha)\beta^\alpha}x^{\alpha-1}e^{-\frac x \beta}\right)=n\log\left(\frac 1{\Gamma(\alpha)}\right)-\alpha n\log\beta+(\alpha-1)\sum_{i=1}^n\log(x_i)-\frac 1\beta\sum_{i=1}^n x_i$$
+
+Derivant i igualant a 0, es te que $$l'(X)=-\frac{\alpha n}\beta+\frac 1{\beta^2}\sum_{i=1}^n =0\implies\beta=\frac 1{\alpha n}\sum_{i=1}^n x_i$$ per lo que el estimador de $\beta$ és 
+$$\hat\beta=\frac{\overline x}{\alpha}$$ que coincideix amb l'estimador per moments.
+
+## Apartat b
+
+La distribució de l'estimador màxim versemblant de qualsevol paràmetre és $$\hat\theta\sim N(\theta,I(\theta)^{-1})$$
+
+Pel cas de la $\beta$, això és $$\hat\beta\sim N(\beta,I(\beta)^{-1})$$
+
+Per la $\beta$ ja hem trobat un estimador, anem a calcular la informació de Fischer sabent que $$I(\theta)=\mathbb E\left(-\frac{\partial^2 l}{\partial\beta^2}\right)$$ i que $$I_n(\theta)=n·I(\theta)$$
+
+Recuperant la primera derivada de la funció de màxima verosimilitud, si calculem la informació d'una mostra $$\frac{\partial l}{\partial \beta}=-\frac\alpha\beta+\frac x{\beta^2}$$ y aplicant la segonda derivada $$\frac{\partial^2 l}{\partial \beta^2}=-\frac\alpha{\beta^2}+\frac {2x}{\beta^3}\implies I(\beta)=\frac\alpha{\beta^2}\implies I_n(\beta)=\frac\alpha{\beta^2}n$$ per la qual cosa la distribució de l'estimador és $$\hat\beta\sim N\left(\beta,\frac{\beta^2}{\alpha n}\right)$$
+
+## Apartat c
+
+En una distribució normal $N\sim(\mu,\sigma^2)$, la variancia és $Var(X)=\sigma^2$, que pel cas de la $\beta$ passa a ser $$Var(\beta)=\frac{\beta^2}{\alpha n}\implies S^2 =\frac{\hat\beta^2}{\alpha n}\implies S^2=\frac{\overline x^2}{\alpha^3 n}$$ on $S^2$ és l'estimador de la variancia i on hem fet servir l'estimador $\hat\beta$.
+
+Per tant $$\hat\beta\sim N\left(\frac{\overline x}{\alpha},\frac{\overline x^2}{\alpha^3 n}\right)$$
+
+

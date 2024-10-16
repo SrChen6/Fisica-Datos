@@ -1,0 +1,2 @@
+clera all
+close all

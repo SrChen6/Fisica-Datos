@@ -1,0 +1,22 @@
+---
+title: "Test"
+author: "Haokang Chen"
+date: "2024-09-30"
+output: pdf_document
+---
+# 100 dades d'una Poisson
+## Es calcula l'esperança i variancia
+
+
+
+```{r}
+mostra1 = rpois(100, 5)
+mean(mostra1)
+var(mostra1)
+```
+
+Mostra
+
+```{r}
+mostra1
+```

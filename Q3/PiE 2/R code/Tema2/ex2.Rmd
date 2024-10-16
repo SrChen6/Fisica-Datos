@@ -1,0 +1,31 @@
+---
+title: "ex2"
+author: "Haokang Chen"
+date: "2024-09-30"
+output: pdf_document
+---
+```{r}
+mostra1 = rchisq(1000, 15)
+mostra1
+mean(mostra1)
+var(mostra1)
+hist(mostra1)
+```
+Teoricament, $E(x)=n,\quad Var(x)=2n$
+
+```{r}
+mostra2 = rchisq(10, 50)
+mean(mostra2)
+var(mostra2)
+hist(mostra2)
+plot(density(mostra2))
+```
+
+```{r}
+par(mfrow=c(1,2))
+hist(mostra2, prob=T)
+plot(density(mostra2))
+```
+```{r}
+pchisq(7.3, 15)
+qchisq(1-0.2, 15) #la distribució és per sobre```

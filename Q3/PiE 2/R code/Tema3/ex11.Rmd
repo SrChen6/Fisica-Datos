@@ -1,0 +1,16 @@
+---
+title: "ex11"
+author: "Haokang Chen"
+date: "2024-10-14"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Apartat 1
+m = rnorm(100000, 3, 1.9)
+t.test(m, mu=3)
+```

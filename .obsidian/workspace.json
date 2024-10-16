@@ -4,35 +4,47 @@
     "type": "split",
     "children": [
       {
-        "id": "f199f09a8acae07e",
+        "id": "0d92f53518d319b9",
         "type": "tabs",
         "children": [
           {
-            "id": "edfa42dd5c6a9f67",
+            "id": "4daacb7dce7728ac",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Q3/Mètodes numèrics/1. Equacions transcendentals.md",
-                "mode": "preview",
+                "file": "Q3/Senyals i sistemes/2. Convolución.md",
+                "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "b32dc1f4ca69041b",
+            "id": "eb62b28ca317467f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Q3/Química inorgànica/2. Enlace covalente.md",
+                "file": "Q3/Senyals i sistemes/3. Transformada de Fourier.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "38f01fd9e49a9caf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Q3/Mètodes numèrics/2. Interpolación polinómica.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -61,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "estacionari",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -82,7 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 266.5
   },
   "right": {
     "id": "412b601ec2582522",
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Q3/Química inorgànica/2. Enlace covalente.md",
+                "file": "Q3/Mètodes numèrics/2. Interpolación polinómica.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Q3/Química inorgànica/2. Enlace covalente.md",
+                "file": "Q3/Mètodes numèrics/2. Interpolación polinómica.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Q3/Química inorgànica/2. Enlace covalente.md"
+                "file": "Q3/Mètodes numèrics/2. Interpolación polinómica.md"
               }
             }
           },
@@ -180,55 +192,55 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b32dc1f4ca69041b",
+  "active": "38f01fd9e49a9caf",
   "lastOpenFiles": [
-    "Q3/Teoria de la informació/2. Informació i entropia.md",
-    "Q3/Química inorgànica/2. Enlace covalente.md",
-    "Q3/Mètodes numèrics/2. Interpolación polinómica.md",
-    "Q3/Mètodes numèrics/1. Equacions transcendentals.md",
-    "Q3/Bases de dades/4. Components lògiques d'una base de dades.md",
-    "Q3/AP 3/1. Tractabilitat.md",
-    "Q3/Química inorgànica/0. Quàntica.md",
-    "Q3/PiE 2/R code/test.R",
-    "Q3/PiE 2/R code",
-    "Q3/PiE 2/Nueva carpeta",
-    "Q3/Senyals i sistemes/2. Convolución.md",
-    "Q3/Mètodes numèrics/Meseguer_Fundamentals_of_Numerical_Mathematics_Wiley_2020.pdf",
-    "Q3/Senyals i sistemes/1. Señales y sistemas.md",
-    "Q2/PiE/1. Espais de probabilitat.md",
-    "Q2/PiE/3. Vectors aleatoris.md",
-    "Q2/PiE/4. Suma de variables aleatòries.md",
-    "Q3/Química inorgànica/1. Sistema periódico de los elementos.md",
+    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/html/practica5.pdf",
+    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/html/practica5.log",
+    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/html/practica5.fo",
+    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/html/practica5.xsl",
+    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/html/practica5.xml",
+    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/html/practica5Dom.xml",
+    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/html",
+    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/plot_lag.m",
+    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/generar_punts.asv",
+    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/mat_lag.m",
+    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/lag_card.m",
+    "Q3/PiE 2/3. Intervals de confiança.md",
+    "Q3/PiE 2/2. Distribucions de probabilitat.md",
     "Q3/PiE 2/1. Introducció a la estadística.md",
-    "Q3/Bases de dades/2. Model relacional.md",
-    "Q3/Bases de dades/0. Introducció.md",
-    "Q3/AP 3/Jutge/exh_search/hello_world.exe",
-    "Q3/AP 3/Jutge/exh_search/hello_world.cc",
-    "Q3/AP 3/Jutge/exh_search/subconjunts(2).exe",
-    "Q3/AP 3/Jutge/exh_search/subconjuntx(2).exe",
-    "Q3/AP 3/Jutge/exh_search/subconjunts(2).cc",
-    "Q3/AP 3/Jutge/exh_search",
-    "Q3/Teoria de la informació/1. Codis i codificació.md",
-    "Q2/Física 2/1.5. Sistemas de coordenades.md",
-    "Q2/Física 2/2. Electromagnetismo.md",
-    "Q2/Física 2/3. Conductores y corriente.md",
-    "Q2/Cálculo 2/6. Teoremas del cálculo integral.md",
+    "Q3/Química inorgànica/3. Enlace metálico.md",
+    "Q3/PiE 2/R code/Entregable 1/Entreagble1.knit.md",
+    "Q3/Química inorgànica/2. Enlace covalente.md",
+    "Q3/Química inorgànica/1. Sistema periódico de los elementos.md",
+    "Q3/PiE 2/4. Tests d'hipòtesis.md",
+    "Q3/Senyals i sistemes/3. Transformada de Fourier.md",
+    "Q3/Senyals i sistemes/2. Convolución.md",
+    "Q3/Mètodes numèrics/2. Interpolación polinómica.md",
+    "Images&Links/Pasted image 20241007215358.png",
+    "Q3/PiE 2/R code/Tema3/ex10.knit.md",
     "Q2/PiE/7. Estimació puntual.md",
-    "Q2/PiE/2. Variables aleatories.md",
     "Q2/PiE/6. Població i mostra.md",
+    "Q2/Física 2/2. Electromagnetismo.md",
+    "Q3/Bases de dades/4. Components lògiques d'una base de dades.md",
+    "Q3/Teoria de la informació/2. Informació i entropia.md",
+    "Q3/Senyals i sistemes/1. Señales y sistemas.md",
+    "Q3/Teoria de la informació/3. Codificació de font.md",
+    "Q3/Bases de dades/5. Disseny de bases de dades relacionals.md",
+    "Q1/Física/2.Cinemática.md",
+    "Q1/Física/3.Fuerzas y ecuaciones del movimiento.md",
+    "Q2/Física 2/3. Conductores y corriente.md",
+    "Q2/Física 2/4. Magnetostàtica.md",
+    "Q3/Mètodes numèrics/1. Equacions transcendentals.md",
     "Q3/Horari Q3.png",
     "Q3/Schedule(2).png",
     "Q3/Horari Personal.png",
     "Q3/Schedule(3).png",
     "Schedule(3).png",
     "Schedule(2).png",
-    "Q3/Senyals i sistemes/0. Introducción.md",
-    "Q3/Teoria de la informació/0. Introducció.md",
     "Schedule.png",
     "Images&Links/Pasted image 20240508094613.png",
     "Images&Links/Pasted image 20240506154320.png",
     "Untitled.canvas",
-    "Images&Links/SmartSelect_20240315_133148_Samsung Notes.jpg",
     "Untitled 1.canvas"
   ]
 }
