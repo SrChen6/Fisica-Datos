@@ -1,0 +1,499 @@
+---
+title: "PIE2: ENTREGABLE 1"
+author: "Eki González i Biel Peràlvarez"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  word_document: default
+  html_document: default
+editor_options:
+  markdown:
+    wrap: 72
+---
+
+<!-- Google Fonts -->
+
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+```{=html}
+<style>
+body {
+  font-family: 'Lora', serif;
+  text-align: justify;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Georgia', serif;
+}
+h1 {
+   text-align: center;
+}
+</style>
+```
+## Exercici 1
+
+**Sigui $X$ una variable aleatòria amb distribució Gamma de paràmetres
+$\alpha = M$ (on $M$ és el número que teniu associat al fitxer parelles.pdf)
+i $\beta$ desconegut (feu servir la parametrització forma-scala que és la
+primera que surt al fitxer "Distribucions de probabilitat"que teniu
+penjat a ATENEA). Assumiu que $\textbf{x} = (x_{1}, x_{2}, \cdots , x_{n})$ és
+una mostra aleatòria simple de $X$.**
+
+\ 
+
+### PART TEÒRICA
+
+\
+
+**a. Trobeu l’estimador de \( \beta \) aplicant el mètode de moments i el de màxim versemblança. Coincideixen?**
+
+  Per aquest apartat utilitzarem la funció de distribució de la gamma: 
+  \[ 
+  f(x; \alpha, \beta) = \frac{1}{\Gamma(\alpha)\beta^\alpha} \cdot x^{\alpha-1} e^{-x/\beta}, \quad x > 0, \, \alpha, \beta > 0 
+  \]
+  on \( \Gamma(z) = \int_0^\infty t^{z-1} e^{-t} \, dt, \quad z > 0 \). 
+  
+  També utilitzarem la següent propietat d'aquesta funció: \(\Gamma(z + 1) = z\Gamma(z)\).
+  
+  **Demostració:** \(
+  \Gamma(z + 1) = \int_0^{\infty} t^z \ e^{-t} dt = t^z(-e^{-t})|_{0}^{\infty} + \int_0^{\infty} z \ t^{z-1} e^{-t} dt= 0 + z \Gamma(z)
+\)
+
+  \
+  
+  \(\underline{\text{1. Mètode de moments:}}\ \ \mu = \mathbb{E}[X] = \bar{x}\ \text{, recordem que}\ \alpha = M \) \
+  
+  Calculem l'esperança: \
+  \[
+  \begin{aligned}
+  \mathbb{E}[X] &= \int_{0}^{\infty} x \cdot f(x; \alpha, \beta) \,\ dx\ =\ \frac{1}{\Gamma(M)\beta^M}\int_{0}^{\infty} x^{M} e^{-x/\beta}   \,\ dx\ =\ \frac{1}{\Gamma(M)\beta^M}\int_{0}^{\infty} (\beta \cdot t)^{M} e^{-t} \cdot \beta \, dt\ = \\[1.5em]
+  &= \frac{\beta^{M+1}}{\Gamma(M)\beta^M}\int_{0}^{\infty} t^{M} e^{-t} \, dt\ =\ \frac{\beta}{\Gamma(M)}\Gamma(M+1)\ =\                     \frac{\beta}{\Gamma(M)}\cdot M \cdot \Gamma(M)\ =\ M\beta
+  \end{aligned}
+  \]
+  \
+  on hem utilitzat el canvi de variable: \(t = \frac{x}{\beta}\ \rightarrow\ x = \beta t\ \rightarrow\ dx = \beta\ dt \)
+  
+  Per tant: \(\bar{x} = M\beta\ \rightarrow\ \beta = \frac{\bar{x}}{M}\ \rightarrow\ \hat{\beta} = \frac{\bar{x}}{M} \) és l'estimador.
+  
+  \
+  
+  \(\underline{\text{2. Mètode de màxima versemblança:}}\) \
+
+  Sigui $\mathcal{L}$ la funció de versemblança i $\mathbf{x}$ una mostra:
+  \[
+  \begin{aligned}
+  & \mathcal{L}(\beta; \mathbf{x}) = \prod_{i=1}^{n} f(x_i;M, \beta) \\[1.5em]
+  & \log(\mathcal{L}(\beta; \mathbf{x})) = \sum_{i=1}^{n} \log\left(\frac{1}{\Gamma(M)\beta^M} \cdot x_i^{M-1} e^{-x_i/\beta}\right) = \sum_{i=1}^{n} \left[\log(x_i^{M-1}) + \log(e^{-x_i/\beta})\right] - \sum_{i=1}^{n} \left[\log(\Gamma(M)) + \log(\beta^M)\right] \\[1.5em] & = \sum_{i=1}^{n} \left[(M-1)\log(x_i) - \frac{x_i}{\beta}\right] - n\log(\Gamma(M)) - nM\log(\beta) = (M-1)\sum_{i=1}^{n} \log(x_i) - \sum_{i=1}^{n}\frac{x_i}{\beta} - n\log(\Gamma(M)) - nM\log(\beta).
+  \end{aligned}
+  \]
+  \
+  Igualem la derivada a zero per a trobar el màxim:
+  \
+  \[
+  \frac{\partial }{\partial \beta} \log(\mathcal{L}(\beta; \mathbf{x})) = \frac{\partial}{\partial\beta} \left( - \sum_{i=1}^{n}\frac{x_i}{\beta} - nM\log(\beta) \right) =          \sum_{i=1}^{n} \frac{x_i}{\beta^2} - \frac{nM}{\beta} = 0
+  \]
+  \
+  Per tant: \
+  \[
+  \frac{1}{\beta^2} \sum_{i=1}^{n} x_i =  \frac{nM}{\beta}\ \leftrightarrow\  \frac{1}{n} \sum_{i=1}^{n} x_i =  \frac{\beta^2M}{\beta}\      \leftrightarrow\ \bar{x} = \beta M \rightarrow\ \hat{\beta} = \frac{\bar{x}}{M}\ \text{és l'estimador.}
+  \]
+  \
+  Comprovem que certament aquest valor és un màxim amb la segona derivada.
+  \
+  \[
+  \frac{\partial^2}{\partial\beta^2} \log(\mathcal{L}(\beta; \mathbf{x})) = \frac{d}{d\beta} \left( \sum_{i=1}^{n} \frac{x_i}{\beta^2} - \frac{nM}{\beta} \right)  =   -\sum_{i=1}^{n} \frac{2x_i}{\beta^3} + \frac{nM}{\beta^2}\
+  \] \
+  Substituïm el valor de \(\beta\) a la segona derivada i veiem que és negativa. \
+  \[
+  \frac{\partial^2}{\partial\beta^2} \log(\mathcal{L}(\frac{\bar{x}}{M}; \mathbf{x})) =        -\frac{2n\bar{x}M^3}{\bar{x}^3} + \frac{nM^3}{\bar{x}^2} =            \frac{-2n\bar{x}M^3+n\bar{x}M^3}{\bar{x}^3} =  \frac{-n\bar{x}M^3}{\bar{x}^3} = \frac{-nM^3}{\bar{x}^2} < 0
+  \]
+  \
+  Per tant, hem vist que pels dos mètodes l'estimador coincideix. Com en el nostra cas $M = 1$ \(\rightarrow \hat{\beta} = \bar{x}\).
+  
+\ 
+
+**b.  Escriviu de forma explícita la distribució asimptòtica de l’estimador màxim versemblant de $\beta$ ($\hat{\beta}$).**
+
+  Sabem per teoria que, si \(\hat{\beta}\) és un estimador màxim-versemblant de \(\beta\), llavors \(\hat{\beta}\ \sim\ N(\beta, (I(\beta))^{-1}) \)
+  
+  En aquest cas: 
+  
+  \
+  \(I(\beta) = \mathbb{E}[-\frac{\partial^2}{\partial\beta^2} \log(\mathcal{L}(\beta; \mathbf{x}))] = \mathbb{E}[\frac{2}{\beta^3}\sum_{i=1}^{n} x_i -                 \frac{nM}{\beta^2}] = -\frac{nM}{\beta^2} + \frac{2}{\beta^3}\mathbb{E}[\sum_{i=1}^{n} x_i] = -\frac{nM}{\beta^2} +                      \frac{2}{\beta^3}\sum_{i=1}^{n} \mathbb{E}[x] = -\frac{nM}{\beta^2} + \frac{2nM\beta}{\beta^3} = \frac{(2-1)nM}{\beta^2} =                 \frac{nM}{\beta^2}\)
+  
+  \
+  
+  Per tant, \(\hat{\beta}\ \sim \ N(\beta, \frac{\beta^2}{nM})\)
+
+\ 
+
+**c.  Estimeu la variància de $\hat{\beta}$ substituint $\beta$ per la seva estimació, i a partir de la distribució asimptòtica de l’estimador    màxim versemblant, trobeu explícitament (igual com s’ha fet a classe) un Interval de Confiança pel paràmetre $\beta$ al $90%$.**
+
+\
+
+  Sabem que $Var(\hat{\beta}) = \frac{\beta^2}{nM}$ per tant al substituïr: $\hat{\beta}\ \sim\ N(\beta, \frac{\hat{\beta}^2}{nM})\ \rightarrow\ \frac{\hat{\beta} - \beta}{\sqrt{\frac{\hat{\beta}^2}{nM}}}\ \sim\ N(0, 1)$
+  
+  Per tant: 
+  \[
+  \begin{aligned}
+  &\mathbb{P}(-Z_{\frac{\alpha}{2}}\ \leq\ \frac{\hat{\beta} - \beta}{\frac{\hat{\beta}}{\sqrt{nM}}}\ \leq\ Z_{\frac{\alpha}{2}}) = 1 - \alpha \\[1.5em]
+  &\mathbb{P}(-Z_{\frac{\alpha}{2}}{\frac{\hat{\beta}}{\sqrt{nM}}}\ \leq\ \hat{\beta} - \beta \leq\ Z_{\frac{\alpha}{2}}{\frac{\hat{\beta}}{\sqrt{nM}}}) = 1 - \alpha \\[1.5em]
+  &\mathbb{P}(-\hat{\beta} - Z_{\frac{\alpha}{2}}{\frac{\hat{\beta}}{\sqrt{nM}}}\ \leq\ - \beta \leq\ -\hat{\beta} + Z_{\frac{\alpha}{2}}{\frac{\hat{\beta}}{\sqrt{nM}}}) = 1 - \alpha \\[1.5em]
+  &\mathbb{P}(\hat{\beta} + Z_{\frac{\alpha}{2}}{\frac{\hat{\beta}}{\sqrt{nM}}}\ \geq\ \beta \geq\ \hat{\beta} - Z_{\frac{\alpha}{2}}{\frac{\hat{\beta}}{\sqrt{nM}}}) = 1 - \alpha \\[1.5em]
+  & IC_{1-\alpha}[\beta] = \hat{\beta} \pm Z_{\frac{\alpha}{2}}{\frac{\hat{\beta}}{\sqrt{nM}}}
+  \end{aligned}
+  \]
+  
+  En el nostra cas $(M = 1)$, si \(1 - \alpha \) és el $90%$, \(\alpha \) és $10% = 0.1$ i \(Z_{0.05} = 1.64\ \rightarrow\ IC_{1-\alpha}[\beta] = \hat{\beta} \pm Z_{0.05}\frac{\hat{\beta}}{\sqrt{n}} \)
+
+### PART PRÀCTICA
+
+**a.  Genereu aleatòriament $150$ dades d’una Gamma $(M, 7.8)$ i
+    il·lustreu-les. Compareu el vostre plot amb el de la funció de
+    densitat de la Gamma pertinent. Què deduïu?**
+
+```{r}
+# Tenim assignat el numero 1
+M = 1
+
+# Generem les 150 dades fixant una "seed" per poder comparar els resultats
+set.seed(123)
+dades = rgamma(150, shape = M, scale = 7.8)
+
+# Histograma soperposat amb la funció de densitat
+hist(dades, probability = TRUE, main = "Histograma de dades Gamma", xlab = "Valor", ylab = "Densitat")
+curve(dgamma(x, shape = M, scale = 7.8), col = "red", lwd = 2, lty = 5, add = TRUE)
+legend("topright", legend = c("Dades generades", "Densitat teòrica"), col = c("black", "red"), lwd = 2)
+
+# Distribució empirica
+plot(ecdf(dades), main = "Distribució de dades Gamma")
+curve(pgamma(x, shape = M, scale = 7.8), col = "red", lwd = 2, lty = 5, add = TRUE)
+legend("bottomright", legend = c("Distribució empirica", "Distribució teòrica"), col = c("black", "red"), lwd = 2)
+
+```
+
+Veient la comparació dels gràfics de la nostra Gamma amb la funció de
+densitat pertinent, podem observar que bàsicament és manté la relació de
+les dades i l'histograma decreix tan ràpidament com la funció de
+densitat.
+
+Tot i això, hi ha alguns intèrvals que sobrepassen o no arriben a la
+funció de densitat, per poder comparar millor el plot amb la funció
+corresponent, hem visualitzat la distribució de probabilitat acumulada i
+hem deduit que amb $150$ dades ja és suficient per assimilar-se a una
+distribució gamma.
+
+**b1. L’esperança i la variància mostrals s’assemblen a les teòriques?
+Calculeu-ne el valor absolut de la diferència.**
+
+```{r}
+M = 1
+
+# Generem les 150 dades fixant una "seed" per poder comparar els resultats
+set.seed(123)
+dades = rgamma(150, shape = M, scale = 7.8)
+
+dades_avg = mean(dades)
+dades_var = var(dades)
+
+dades_avg
+dades_var
+
+error_avg = abs(dades_avg - M*7.8)
+error_var = abs(dades_var - M*7.8*7.8)
+
+error_avg
+error_var
+
+```
+
+Podem observar que els valors de l'esperança i variancia s'assemblen
+considerablement als valors teòrics. Tot i això, els errors s'han de
+tenir en compte, sobretot el de la variancia, ja que representa un $0.11\%$
+del valor teòric. En canvi, l'esperança un $0.06$.
+
+**b2. Trobeu l’e.m.v. de $\beta$ a partir de les dades i compareu-lo amb el
+teòric.**
+
+```{r}
+beta_est = dades_avg/M
+beta_est
+
+```
+
+**c.  Trobeu a partir de les vostres dades l’Interval de Confiança per $\beta$
+    al $90%$.**
+
+Hem vist a la part teòrica que, en el nostra cas: \( IC_{1-\alpha}[\beta] = \hat{\beta} \pm Z_{0.05}\frac{\hat{\beta}}{\sqrt{n}} \)
+Per tant:
+```{r}
+z = qnorm(0.05, lower.tail = FALSE)
+IC_left = beta_est - z*beta_est/sqrt(150)
+IC_right = beta_est + z*beta_est/sqrt(150)
+IC_left
+IC_right
+```
+En conclusió: \( IC_{90}[\beta] = [6.287, 8.238] \)
+
+## Exercici 2
+
+**S’ha mesurat el contingut en sodi i les calories de dos
+tipus de salsitxes: de gall d’indi i de vedella. Les salsitxes son de
+forma mitjana, i tenen un pes d’aproximadament $60 \ gr$. Les dades les
+trobareu en el fitxer dadesM.csv (on la M és el número que teniu
+associat al fitxer parelles.pdf).**
+
+**a. Compareu mitjançant gràfics els continguts de sodi dels dos tipus de salsitxes. Què deduïu?.**
+ 
+```{r}
+library(ggplot2)
+
+dades = read.csv("dades1.csv")
+
+# Canviem les "," per "." dels decimals
+dades$Sodi = as.numeric(gsub(",", ".", dades$Sodi))
+dades$Calories = as.numeric(gsub(",", ".", dades$Calories))
+
+# Calculem les mitjanes de sodi per cada tipus
+mitjana_vedella = mean(dades$Sodi[dades$Tipus == "Vedella"])
+mitjana_gall_dindi = mean(dades$Sodi[dades$Tipus == "Gall d'indi"])
+
+# Diagrama de caixes
+ggplot(dades, aes(x = Tipus, y = Sodi, fill = Tipus)) +
+  geom_boxplot() +
+  labs(title = "Comparació del contingut de sodi entre Vedella i Gall d'indi",
+       y = "Sodi (mg)", x = "Tipus") +
+  scale_fill_manual(values = c("Vedella" = "lightblue", "Gall d'indi" = "lightgreen")) +
+  geom_hline(yintercept = mitjana_vedella, color = "blue", linetype = "dashed") +
+  geom_hline(yintercept = mitjana_gall_dindi, color = "green", linetype = "dashed") +
+  theme_minimal()
+
+```
+
+Podem veure com el contingut de sodi de les salsitxes vedella és superior al de les de gall d'indi. Excepte el punt atípic, que representa un valor de sodi molt elevat i allunyat de la resta de valors, tots els altres valors de sodi de salistxes de gall d'indi són més baixos que els de la vedella, per tant les mitjanes i medianes també.
+
+A més, es veu clarament per les "cues" que surten de les caixes, que els valors de sodi de la salsitxa de vedella són molt més variats que els de l'altra. Exactament van des de $520$ a $610$, mentre que els valors de la salsitxa de gall d'indi van de $490$ a $510$, si obviem el valor atípic de $550$.
+
+
+**b. Podem suposar que la variància de la variable sodi en les salsitxes de vedella és semblant a la de les
+salsitxes de gall d’indi?.**
+
+Per a saber si podem suposar que és semblant, fem el test de comparació de variàncies. Com que les variàncies son desconegudes, les estimem:
+
+$$
+S_v^2:\text{Estimador de la variancia de les salsitxes de vedella}\ \ \ \ S_v^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (x_i - \bar{x})^2 \\
+$$
+\(\text{On}\ x_i\ \text{són els diferents valors de sodi de la salsitxa de vedella}\)
+
+
+$$
+S_g^2:\text{Estimador de la variancia de les salsitxes de Gall d'indi}\ \ \ \ S_g^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (y_i - \bar{y})^2
+$$
+\(\text{On}\ y_i\ \text{són els diferents valors de sodi de la salsitxa de gall d'indi}\)
+
+```{r}
+# Calcular els estimadors de les variancies de sodi per cada tipus
+## RECORDEM: S^2 ja és est_variancia, no cal elevar al quadrat.
+est_variancia_vedella = var(dades$Sodi[dades$Tipus == "Vedella"])
+est_variancia_gall_dindi = var(dades$Sodi[dades$Tipus == "Gall d'indi"])
+```
+\
+Per tant: \(\ S_v^2 = 931.08 \) i \(\ S_g^2 = 193.24 \) \
+
+Sigui \(\ H_0: \frac{\sigma_v^2}{\sigma_g^2} = 1\ \ \text{i}\ \  H_1: \frac{\sigma_v^2}{\sigma_g^2} \neq 1\ \), considerem \(\ F_0 = \frac{S_v^2 / \sigma_v^2}{S_g^2 / \sigma_g^2} \sim F_{n_v - 1, n_g - 1}\ \rightarrow\ \) Si \(H_0\) és certa: \(F_0 = \frac{S_v^2}{S_g^2} \sim F_{n_v - 1, n_g - 1}\) 
+\
+
+```{r}
+n_v = (length(dades$Sodi[dades$Tipus == "Vedella"]))
+n_g = (length(dades$Sodi[dades$Tipus == "Gall d'indi"]))
+alpha = 0.05
+
+F_0 = est_variancia_vedella / est_variancia_gall_dindi
+F_0
+
+qf(1-alpha/2, n_v - 1, n_g - 1)
+qf(alpha/2, n_v - 1, n_g - 1)
+```
+Com que \(F_0 \) és més gran que \(F_{1-\alpha/2, n_v - 1, n_g - 1} \), rebutgem \(H_0 \). Per tant, les variàncies són diferents.
+Comprovem per p_valors:
+
+```{r}
+p_valor = 2*(1 - pf(F_0, n_v - 1, n_g - 1))
+p_valor
+```
+Tal com esperàvem, p_valor = 0.006 < 0.05 = \(\alpha \), per tant la decisió de rebutjar \(H_0 \) és la correcta.
+
+**c. Podem concloure que no hi ha diferències estadísticament significatives entre les salsitxes de vedella i les
+de gall d’indi en quant a contingut de sodi? ($\alpha$ = 0.05). Contesteu aquesta pregunta mitjançant: i) punts
+crítics, ii) p-valors, iii) Intervals de confiança.**
+
+Dels resultats obtinguts a l'apartat anterior, sabem que ambdues poblacions tenen variances desconegudes i estadísticament diferents. Per aquest motiu, compararem les mitjanes de les dues poblacions assumint normalitat en aquesta situació.
+Recordem la derivació:
+
+$$
+\bar{X} \sim N \left(  \mu_v, \frac{\sigma_v^2}{n_v}\right) \quad \bar{Y} \sim N \left(  \mu_g, \frac{\sigma_g^2}{n_g}\right) \quad \implies \quad \frac{(\bar{x}-\bar{y})-(\mu_v-\mu_g)}{ \sqrt{\frac{\sigma_v^2}{n_v}+\frac{\sigma_g^2}{n_g}} } \sim N(0,1)
+$$
+Siguin $H_0: \mu_v = \mu_g\ \quad \  H_1: \mu_v \neq \mu_g\ $. Llavors assumint $H_0$ com certa i estimant les variancies, obtenim:
+$$
+\frac{ \bar{x}-\bar{y} }{ \sqrt{\frac{s_v^2}{n_v}+\frac{s_g^2}{n_g}} } \sim t_{\nu} \qquad \nu = \frac{ \left( \frac{s_v^2}{n_v}+\frac{s_g^2}{n_g} \right)^2 }{ \frac{1}{n_v-1} \ \left(\frac{s_v^2}{n_v}\right)^2 +\frac{1}{n_g-1} \ \left(\frac{s_g^2}{n_g}\right)^2 }
+$$
+A continuació, calcularem el numero de graus de llibertat  $\nu$ (arrodonim si no és enter) i respodrem a la pregunta sobre la diferència estadística utilitzant els diferents mètodes solicitats.
+ 
+```{r}
+nu = (est_variancia_vedella/n_v + est_variancia_gall_dindi/n_g)^2 / ((est_variancia_vedella/(n_v))^2/(n_v-1) + (est_variancia_gall_dindi/(n_g))^2/(n_g-1)
+)
+nu
+nu_rounded = 20
+
+estadistic_prova = (mitjana_vedella - mitjana_gall_dindi) / sqrt(est_variancia_vedella/n_v + est_variancia_gall_dindi/n_g)
+
+# Per punts critics: 
+estadistic_prova
+qt(alpha/2, nu_rounded, lower.tail = FALSE)
+```
+
+Rebutgem $H_0$, ja que $8.79 > 2.08 = t_{\alpha/2}$
+
+```{r}
+# Per p-valors.
+p_valor = 2*(1 - pt(estadistic_prova, nu_rounded))
+p_valor
+```
+
+Podem veure que també coincideix en que s'ha de rebutjar, perquè $2.6·10^{-8} < 0.05$.
+
+```{r}
+# Per intervals de confianç (Fòrmula demostrada a classe [procediment anàleg al de l'exercici 1])
+IC_95_left = (mitjana_vedella - mitjana_gall_dindi) - qt(alpha/2, nu_rounded, lower.tail = FALSE) * sqrt(est_variancia_vedella/n_v + est_variancia_gall_dindi/n_g)
+IC_95_right = (mitjana_vedella - mitjana_gall_dindi) + qt(alpha/2, nu_rounded, lower.tail = FALSE) * sqrt(est_variancia_vedella/n_v + est_variancia_gall_dindi/n_g)
+IC_95_left
+IC_95_right
+```
+Per tant, l'interval és $[58.07, 94.19]$. Com que aquest interval no inclou el zero, la diferència entre les mitjanes és significativament diferent de zero, per tant rebutgem ${H_0}$.
+ 
+**d. Podem suposar que les salsitxes de gall d’indi tenen un contingut de sodi superior a 500 mgr per salsitxa?**
+ 
+Volem fer un test d'hipòtesi, amb variància desconseguda, considerant el valor mitjà de les salsitxes de gall d'indi i $\alpha = 0.05$. Serà el següent: \
+
+\(\ H_0: \mu = 500\ \ \text{i}\ \  H_1: \mu\ >\ 500\ \), considerem \(\ \frac{\bar{y} - \mu}{S_g/\sqrt{n_g}} \sim t_{n_g - 1}\ \rightarrow\ \) Si \(H_0\) és certa: \(t_0 = \frac{\bar{y} - 500}{S_g/\sqrt{n_g}} \sim t_{n_g - 1}\)
+\
+
+```{r}
+desviacio_estandard = sqrt(est_variancia_gall_dindi)
+t_0 = (mitjana_gall_dindi - 500) / (desviacio_estandard / sqrt(n_g))
+t_0
+
+qt(alpha, n_g - 1, lower.tail = FALSE)
+```
+
+Com que \(t_0 \) és més petit que \(t_{\alpha/2,\ n_g - 1} \), no rebutgem \(H_0 \). Per tant, podem suposar que les salsitxes de gall d'indi no tenen un conjunt de sodi superior a $500 \ mgr$ per salsitxa.
+
+Per assegurar-nos, comprovem per p_valors:
+
+```{r}
+p_valor = 1 - pt(t_0, n_g - 1)
+
+# Comprovem amb t.test implementat a R
+resultado <- t.test(dades$Sodi[dades$Tipus == "Gall d'indi"], mu = 500, alternative = "greater")
+print(resultado)
+
+# Els nostres resultats:
+paste("Mean:", mitjana_gall_dindi)
+paste("t:", t_0)
+paste("Degrees of freedom (df):", n_g - 1)
+paste("p-value:", p_valor)
+```
+Tal com esperàvem, p_valor \(= 0.068 > 0.05 = \alpha \), per tant la decisió de no rebutjar \(H_0 \) és la correcta.
+
+**e. Calculeu un interval de confiança al 95% per la diferència de sodi entre una salsitxa de vedella i una de
+gall d’indi. Què es podria fer per tal de reduir l’amplitud d’aquest interval?.**
+
+Utilitzant un desenvolupament similar al de l'apartat c, l'interval de confianza serà el següent:
+$$
+\frac{(\bar{x}-\bar{y})-(\mu_v-\mu_g)}{ \sqrt{\frac{s_v^2}{n_v}+\frac{s_g^2}{n_g}} } \sim t_{\nu} \quad \implies \quad IC_{1-\alpha}(\mu_v-\mu_g) = (\bar{x}-\bar{y}) \pm t_{\nu; \ \alpha/2}\sqrt{\frac{s_v^2}{n_v}+\frac{s_g^2}{n_g}}
+$$
+```{r}
+alpha = 0.05
+IC_95_left = (mitjana_vedella - mitjana_gall_dindi) - qt(alpha/2, nu_rounded, lower.tail = FALSE) * sqrt( est_variancia_vedella/n_v + est_variancia_gall_dindi/n_g )
+
+IC_95_right = (mitjana_vedella - mitjana_gall_dindi) + qt(alpha/2, nu_rounded, lower.tail = FALSE) * sqrt( est_variancia_vedella/n_v + est_variancia_gall_dindi/n_g )
+
+IC_95_left
+IC_95_right
+IC_95_right-IC_95_left
+
+```
+Per tant l'interval és $[58.07, 94.19]$ i l'amplitud de $36.12$. 
+
+Per disminuir l'amplitud d'aquest interval, podriem, en primer lloc, augmentar $\alpha$, ja que això implicaria una menor probabilitat de trobar el valor dins l'interval i això reduïria la seva longitud. Tot i això no és una manera gaire interessant. 
+
+D'altra banda, es podrien recopilar més dades, i amb una millor desviació estàndard de l'estadístic, aquest disminuirà. Per tant també disminuirà la longitud de l'interval. Dit amb altres paraules, si aconseguim que el valor de l'arrel quadrada sigui més petit, aconseguirem reduïr l'error que sumem i restem a la diferència de mitjanes.
+
+## Exercici 3
+
+**En un estudi ecològic sobre el comportament alimentari dels ocells, es va comptar el nombre de salts (n) entre vols per a uns quants ocells. Les dades les teniu al fitxer ocellsM.csv (on M és el nombre que teniu associat al fitxer parelles.pdf). Es suposa que la variable "Nombre de salts entre vols"segueix una distribució geomètrica amb suport {1,2,3,...}. Es vol saber si es pot assumir que p = 0.3. Apliqueu el test de la raó de versemblança per respondre aquesta pregunta. i) Quin és l’estadístic de prova?. ii) Quin és el p-valor? iii) Què concloeu? .**
+
+Considerem el test següent: $H_0: p = 0.3$ i $H_1: p \neq 0.3$. Per tant: $\theta_0 = {0.3}\ \text{i}\ \theta_1 = [0,1]-{0.3}$.
+A més, $\Theta\ \text{i}\ \mathcal{S} = \mathbb{Z}^+$ i $dim \Theta - dim \theta_0 = 1 - 0 = 1$
+
+Per a trobar l'estadístic de prova $\mathcal{X}^2_0$ realitzarem el desenvolupament següent:
+
+$$
+X \sim Geom(p) \quad \therefore \ \mathbb{P}(X=x) = p(1-p)^{x-1} \quad \implies 
+\mathcal{L}(p, \textbf{x}) = \prod_{i=1}^{n}\mathbb{P}(X=x_i)
+\\
+\mathcal{L}(p, \textbf{x}) = \prod_{i=1}^{n}p(1-p)^{x_i-1} = p^n(1-p)^{-n} (1-p)^{\sum_{i=1}^n x_i}
+\\
+l(p,\textbf{x}) = \log(\mathcal{L}(p, \textbf{x}))= n \log(p) - n\log(1-p) + n \bar{x}\log(1-p) \quad \implies
+\\
+\frac{\partial l}{\partial p} = \frac{n}{p} + \frac{n}{1-p} + n \bar{x} \frac{-1}{1-p} \equiv 0 \quad 
+\therefore \ n(1-p)+np-n \bar{x} p = 0 \implies n - n \bar{x} p = 0 \implies \hat{p} = \frac{1}{\bar{x}}
+\\
+$$
+
+Comprovem que el punt que hem trobat és un màxim amb la segona derivada.
+$$
+\frac{\partial l}{\partial p} = \frac{n}{p} + \frac{n}{1-p} + n \bar{x} \frac{-1}{1-p} \\
+\frac{\partial^2 l}{\partial p^2} = -\frac{n}{p^2} + \frac{n}{(1-p)^2} - n \bar{x} \frac{1}{(1-p)^2} < 0 \\
+\frac{n}{(1-p)^2} < \frac{n}{p^2} + n\bar{x} \frac{1}{(1-p)^2}
+$$
+Aquesta desigualtat és certa, ja que $n > 0$, $\bar{x} > 1$ i els quadrats també:
+$$
+\frac{n}{p^2} + n\bar{x} \frac{1}{(1-p)^2} > n\bar{x} \frac{1}{(1-p)^2} > \frac{n}{(1-p)^2}
+$$
+
+A més, sabem que es pot demostrar que:
+
+$$
+\mathcal{X}^2_0 = -2 \log \lambda(x) = -2 [ l(0.3 ; \textbf{x}) - l(\hat{p} ; \textbf{x})] \sim \mathcal{X}^2
+$$
+
+Després de trobar l'estadístic de proba, calculem el seu valor:
+```{r}
+logL <- function(p, x, n){
+    n*log(p) - n*log(1-p) + n* x*log(1-p)
+}
+
+dades_ocells = read.csv("ocells1.csv")
+valor_ocells = dades_ocells$Valor[]
+freq_ocells = dades_ocells$Frequencia[]
+
+n = sum(freq_ocells)
+mean_valor = sum(valor_ocells*freq_ocells)/n
+
+p_esti = 1/mean_valor
+sqXi_0 = -2*( logL(0.3, mean_valor, n) - logL(p_esti, mean_valor, n))
+sqXi_0
+
+# Comprovem per punts crítics
+qchisq(0.05, 1, lower.tail = FALSE)
+```
+
+
+ii. Calculem el p_valor associat:
+```{r}
+pchisq( sqXi_0, 1, lower.tail = FALSE )
+```
+
+iii. En conclusió, podem veure que no és correcta assumir $p=0.3$, ja que el p_valor és menor a $\alpha$ i rebutgem la $H_0$. 
+A més, $\mathcal{X_0}^2$ és $5.65$, que és major a $3.84$, que és $\mathcal{X_{0.05}}^2$

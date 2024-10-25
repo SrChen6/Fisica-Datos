@@ -2,7 +2,7 @@
 title: "PiE2 Entregable 1"
 author: "Ferran Alia, Haokang Chen"
 date: "2024-10-11"
-output: html_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
@@ -16,43 +16,349 @@ La funció de distribució d'una distribució Gamma és $$f(X=x)=\frac 1{\Gamma(
 que $\alpha = M= 2$.
 
 ```{r}
+M=2
 al=2
 ```
-Suposem una mostra $x=(x_1 ,\dots,x_n)$.
+Es suposa una mostra $x=(x_1 ,\dots,x_n)$.
 
-## Apartat a
+## Part teòrica
+
+### Apartat a
 L'estimador de $\beta$ s'anomenarà $\hat\beta$, que es pot trobar de dos maneres:
 
-### Moments
-Sabent que $E(X)=\alpha·\beta$:
+#### Moments
+Sabent que $E(X)=\alpha*\beta$ i que $m_1=E(X)$:
 $$m_1 =\frac 1 n\sum_{i=1}^n x_i=\alpha\beta\implies\beta=\frac 1{n\alpha}\sum_{i=1}^nx_i\implies\hat\beta=\frac{\overline x}{\alpha}$$ per tant 
 l'estimador per moments de $\beta$ és $\hat\beta=\frac{\overline x}{\alpha}$
 
-### Màxima versemblança
+#### Màxima versemblança
 La funció de verosimilitud és $$L(x)=\mathbb P(X_1=x_1,\dots,X_n=x_n)$$
 
 Sabent que les mostres són independents: $$L(X)=\prod_{i=1}^n\mathbb P(X_i=x_i)$$
 
-Per facilitat les operacions, apliquem el logaritme a la funció (no mou la 
-coordenada x del màxim): $$l(X)=\sum_{i=1}^n\log\left(\frac 1{\Gamma(\alpha)\beta^\alpha}x^{\alpha-1}e^{-\frac x \beta}\right)=n\log\left(\frac 1{\Gamma(\alpha)}\right)-\alpha n\log\beta+(\alpha-1)\sum_{i=1}^n\log(x_i)-\frac 1\beta\sum_{i=1}^n x_i$$
+Per facilitat les operacions, s'aplica el logaritme a la funció, ja que aquesta funció no mou la 
+coordenada x del màxim: $$l(X)=\sum_{i=1}^n\log\left(\frac 1{\Gamma(\alpha)\beta^\alpha}x^{\alpha-1}e^{-\frac x \beta}\right)=n\log\left(\frac 1{\Gamma(\alpha)}\right)-\alpha n\log\beta+(\alpha-1)\sum_{i=1}^n\log(x_i)-\frac 1\beta\sum_{i=1}^n x_i$$
 
 Derivant i igualant a 0, es te que $$l'(X)=-\frac{\alpha n}\beta+\frac 1{\beta^2}\sum_{i=1}^n =0\implies\beta=\frac 1{\alpha n}\sum_{i=1}^n x_i$$ per lo que el estimador de $\beta$ és 
 $$\hat\beta=\frac{\overline x}{\alpha}$$ que coincideix amb l'estimador per moments.
 
-## Apartat b
+### Apartat b
 
 La distribució de l'estimador màxim versemblant de qualsevol paràmetre és $$\hat\theta\sim N(\theta,I(\theta)^{-1})$$
 
 Pel cas de la $\beta$, això és $$\hat\beta\sim N(\beta,I(\beta)^{-1})$$
 
-Per la $\beta$ ja hem trobat un estimador, anem a calcular la informació de Fischer sabent que $$I(\theta)=\mathbb E\left(-\frac{\partial^2 l}{\partial\beta^2}\right)$$ i que $$I_n(\theta)=n·I(\theta)$$
+Per la $\beta$ ja s'ha trobat un estimador, ara toca a calcular la informació de Fischer sabent que $$I(\theta)=\mathbb E\left(-\frac{\partial^2 l}{\partial\beta^2}\right)$$ i que $$I_n(\theta)=n*I(\theta)$$
 
-Recuperant la primera derivada de la funció de màxima verosimilitud, si calculem la informació d'una mostra $$\frac{\partial l}{\partial \beta}=-\frac\alpha\beta+\frac x{\beta^2}$$ y aplicant la segonda derivada $$\frac{\partial^2 l}{\partial \beta^2}=-\frac\alpha{\beta^2}+\frac {2x}{\beta^3}\implies I(\beta)=\frac\alpha{\beta^2}\implies I_n(\beta)=\frac\alpha{\beta^2}n$$ per la qual cosa la distribució de l'estimador és $$\hat\beta\sim N\left(\beta,\frac{\beta^2}{\alpha n}\right)$$
+Recuperant la primera derivada de la funció de màxima verosimilitud, si es calcula la informació d'una mostra $$\frac{\partial l}{\partial \beta}=-\frac\alpha\beta+\frac x{\beta^2}$$ y s'aplica la segonda derivada $$\frac{\partial^2 l}{\partial \beta^2}=-\frac\alpha{\beta^2}+\frac {2x}{\beta^3}\implies I(\beta)=\frac\alpha{\beta^2}\implies I_n(\beta)=\frac\alpha{\beta^2}n$$ per la qual cosa la distribució de l'estimador és $$\hat\beta\sim N\left(\beta,\frac{\beta^2}{\alpha n}\right)$$
+
+### Apartat c
+
+En una distribució normal $N\sim(\mu,\sigma^2)$, la variancia és $Var(X)=\sigma^2$, que pel cas de la $\beta$ passa a ser $$Var(\beta)=\frac{\beta^2}{\alpha n}\implies S^2 =\frac{\hat\beta^2}{\alpha n}\implies S^2=\frac{\overline x^2}{\alpha^3 n}$$ on $S^2$ és l'estimador de la variancia i on s'ha fet servir l'estimador $\hat\beta$.
+
+Per tant $$\hat\beta\sim N\left(\frac{\overline x}{\alpha},\frac{\overline x^2}{\alpha^3 n}\right)$$
+
+Per trobar un interval de confiança del 90% ($\gamma=0.1$) s'ha de trobar la quantitat pivotal: una distribució que no depengui del paràmetre que estme estudiant. En aquest cas es pot trobar normalitzant la distribució normal: $$\frac{\hat\beta-\frac{\overline x}{\alpha}}{\frac{\overline x^2}{\alpha^3n}}\sim N(0,1)$$
+
+Per l'interval de confiança s'han de considerar els quartil $z_{\gamma/2}$ de la distribució normal que deixa una probabilitat de $\gamma/2$ per dalt, ja que volem un interval de probabilitat $1-\gamma$: $$\mathbb P\left(-z_{\gamma/2}<\frac{\hat\beta-\frac{\overline x}{\alpha}}{\frac{\overline x^2}{\alpha^3n}}<z_{\gamma/2}\right)=1-\gamma$$
+Operant per aïllar $\hat\beta$ queda que $$\mathbb P\left(\frac{\overline x}{\alpha}-z_{\gamma/2}*\frac{\overline x^2}{\alpha^3n}<\hat\beta<\frac{\overline x}{\alpha}+z_{\gamma/2}*\frac{\overline x^2}{\alpha^3n}\right)=1-\gamma$$
+
+Per tant, un interval de confiança del 90% per la $\hat\beta$ és $$\hat\beta\in\left[\frac{\overline x}{\alpha}-z_{\gamma/2}*\frac{\overline x^2}{\alpha^3n},\frac{\overline x}{\alpha}+z_{\gamma/2}*\frac{\overline x^2}{\alpha^3n}\right]$$
+
+
+## Part pràcica
+
+### Apartat a
+
+```{r}
+
+set.seed(7636)
+
+M <- 2
+al <- M
+be <- 7.8
+n <- 150
+data <- rgamma(n, shape=al, scale=be) #Mostra aleatòria de 150 valors seguint una distribució gamma
+
+# Plot dels valors (histograma) junt amb la funció de distribució de la Gamma
+hist(data, freq = FALSE, breaks = 20, main = "Histograma de Gamma", 
+     xlab = "x", ylab = "Frequencia", col = "lightgray", border = "black")
+
+x <- seq(0, 50, by = 0.1)
+y <- dgamma(x, shape=al, scale=be)
+lines(x, y, col = "blue", lwd = 2)
+
+legend("topright", legend = "Gamma Distribution", col = "blue", lwd = 2)
+
+```
+
+A l'histograma de la Gamma es pot veure que, tot i que hi ha petites diferències, les mostres segueixen la funció de distribució de la Gamma.
+
+### Apartat b
+```{r}
+dif_mean_exp_teo = abs(al*be-mean(data))
+dif_mean_exp_teo #Diferència entre la mitjana experimental i la teòrica
+
+dif_var_exp_teo = abs(al*be*be-var(data))
+dif_var_exp_teo #Diferència entre la variança experimental i la teòrica
+
+```
+Es pot veure que, en tots dos casos, la diferència entre els valors experimentals i els teòrics són molt petits, es poden considerar negligibles.
+
+En el cas de la variança, la diferència és de més de 20, però la variança és de l'ordre de 120, per tant la aleatorietat fa que aquesta variï.
+
+
+### Apartat c
+```{r}
+emv_be=mean(data)/al #Càlcul de la beta experimental
+emv_be # beta estimada
+be # beta teòrica
+emv_be-be #Diferència entre beta estimada i teòrica
+```
+La $\beta$ experimental és molt similar a la $\beta$ teòrica, diferint només en 0.002 unitats.
+
+
+### Apartat d
+Com s'ha trobat a apartats anteriors, l'interval de confiança de la beta és $$\hat\beta\in\left[\frac{\overline x}{\alpha}-z_{\gamma/2}*\frac{\overline x^2}{\alpha^3n},\frac{\overline x}{\alpha}+z_{\gamma/2}*\frac{\overline x^2}{\alpha^3n}\right]$$
+
+Aplicant aquesta fòrmula a les dades obtingudes:
+
+```{r}
+IC_low <- mean(data)/al - qnorm(0.95)*(mean(data)^2/(al^3*n))
+IC_high <- mean(data)/al + qnorm(0.95)*(mean(data)^2/(al^3*n))
+IC_low
+IC_high
+```
+L'inverval de confiança del 90% per la $\beta$ és $$IC(\beta)_{0.9}=[7.730397;8.427534]$$
+
+# Exercici 2
+
+Primer de tot, s'importen les dades des de l'arxiu csv.
+
+```{r}
+library(readr)
+dades2 <- read.csv("dades2.csv", sep = ";")
+```
+
+## Apartat a
+
+Com es vol comparar les salsitxes dels dos tipus, es dividiran les dades en dos taules diferents, i es compararan els valors de sodi de cada tipus de carn amb un histograma:
+
+```{r}
+vedella <- dades2[dades2$Tipus == "Vedella", ] # Dades vedella
+gallDIndi <- dades2[dades2$Tipus == "Gall d'indi", ] # Dades Gall d'indi
+
+avg_sodi_vedella = mean(vedella$Sodi)
+avg_sodi_vedella #Mitjana de sodi en vedella
+
+avg_sodi_gallDindi = mean(gallDIndi$Sodi)
+avg_sodi_gallDindi # Mitjana de sodi en gall d'indi
+
+
+# Histograma per comparar el sodi de les dues carns.
+breaks = seq(470, 630, by = 6)
+
+hist(gallDIndi$Sodi, 
+     main = "Sodi en Gall d'indi i Vedella", 
+     xlab = "Valors de Sodi", 
+     ylab = "Frequencia", 
+     col = "blue", 
+     border = "black",
+     breaks = breaks)
+
+abline(v = avg_sodi_gallDindi, col = "blue", lwd = 2)
+abline(v = avg_sodi_vedella, col = "red", lwd = 2)
+
+hist(vedella$Sodi, 
+     col = "red", 
+     border = "black",
+     breaks = breaks,
+     add = TRUE)
+
+legend("topright", 
+       legend = c("Gall d'indi", "Vedella"), 
+       fill = c("blue", "red"), 
+       border = "black", 
+       title = "Tipus")
+par(mfrow = c(1, 1))
+```
+
+## Apartat b
+
+Veient aquesta gràfica es nota una diferencia aparent en el contingut de sodi, sembla que el gall d'indi te menys quantitat de sodi, ja que els seus valors mitjans difereixen en 76.2.
+
+Només veient els histogrames es pot notar que els valors de sodi a la vedella son força més dispersos que els del gall d'indi. Si es calculen les variancies a partir de la mostra, es troba que, efectivament, així és.
+
+```{r}
+var_sodi_gallDindi = var(gallDIndi$Sodi)
+var_sodi_vedella = var(vedella$Sodi)
+abs(var_sodi_gallDindi - var_sodi_vedella) # Diferència de sodi en les dues carns
+```
+
+A més, si es fa el test d'hipòtesis per les variançes: 
+
+$H_o:\sigma_v^2=\sigma_g^2$
+$H_1:\sigma_v^2\neq\sigma_g^2$
+
+Com es comparen variançes, l'estadístic de prova i la distribució de referència és $$F_{o}=\frac{\max(S_{x}^{2},S_{y}^{2})}{\min(S_{x}^{2},S_{y}^{2})}\sim F_{n_{x}-1,n_{y}-1}$$
+
+on es rebutja $H_o$ quan $$F_{o}>F_{\alpha,n_{x}-1,n_{y}-1}$$
+```{r}
+F_o = var_sodi_vedella/var_sodi_gallDindi
+F_o # estadístic de prova
+
+pt_crit = qf(0.05, 14,14)
+pt_crit # Punt crític
+```
+
+Com es pot veure, $F_o$ és major que $pt_crit$, per tant es rebutja que les dues variancies siguin iguals.
 
 ## Apartat c
 
-En una distribució normal $N\sim(\mu,\sigma^2)$, la variancia és $Var(X)=\sigma^2$, que pel cas de la $\beta$ passa a ser $$Var(\beta)=\frac{\beta^2}{\alpha n}\implies S^2 =\frac{\hat\beta^2}{\alpha n}\implies S^2=\frac{\overline x^2}{\alpha^3 n}$$ on $S^2$ és l'estimador de la variancia i on hem fet servir l'estimador $\hat\beta$.
+Ara es vol comparar el gall d'indi amb la vedella:
 
-Per tant $$\hat\beta\sim N\left(\frac{\overline x}{\alpha},\frac{\overline x^2}{\alpha^3 n}\right)$$
+```{r}
+t_test_result <- t.test(vedella$Sodi, gallDIndi$Sodi, var.equal = FALSE)
+t_test_result # Estudi de comparació entre les dues carns
+```
+
+Això es fa primer amb el mètode dels punts critics:
+
+```{r}
+df <- t_test_result$parameter
+alpha <- 0.05 #confiança que es dona al test
+
+t_value <- t_test_result$statistic
+t_critic <- qt(1 - alpha/2, df)
+
+t_value # estadístic de prova
+t_critic # Punt crític
+
+#Codi per identificar si s'ha de rebutjar la hipòtesi nul·la
+if(abs(t_value) > t_critic) {
+  print("Rebutgem la hipòtesi nul*la: hi ha una diferència significativa.")
+} else {
+  print("No podem rebutjar la hipòtesi nul*la: la diferència no és significativa.")
+}
+```
+
+També es veu clarament que el p-valor calculat és inferior a l'alfa que s'estaà fent servir.
+
+```{r}
+#Codi per identificar si s'ha de rebutjar la hipòtesi nul·la
+if(abs(t_test_result$p.value) < alpha) {
+  print("Rebutgem la hipòtesi nul*la: hi ha una diferència significativa.")
+} else {
+  print("No podem rebutjar la hipòtesi nul*la: la diferència no és significativa.")
+}
+```
+
+I el mateix passa amb els intervals de confiança:
+
+```{r}
+t_test_result$conf.int #Interval de confiança de la resta de les dues mu
+```
+
+Es veu que aquest interval de confiança no inclou el zero, per tant amb una probabilitat del 95% els dos paràmetres són diferents.
+
+## Apartat d
+
+```{r}
+t_test_sodi <- t.test(gallDIndi$Sodi, mu = 500, alternative = "greater")
+t_test_sodi # test de si el gall d'indi té més de 500mg de Sodi
+```
+
+Com el p-valor és superior a 0.05 (la confiança que se li ha donat), no podem concloure que el gall d'indi tingui una quantitat de sodi major que 500mg.
+
+
+## Apartat e
+
+Com el sodi de la vedella i del gall d'indi segueixen normals, la seva diferencia també seguirà una normal $N(\mu_v-\mu_g, \frac{\sigma_v}{\sqrt{n_v}}+\frac{\sigma_g}{\sqrt{n_g}})$, substituïnt les sigmes per les seves estimacions, trobem que $$\frac{\overline x_{v}-\overline x_{g}-(\mu_{v}-\mu_{g})}{\sqrt{\frac{S_{v}^{2}}{n_{v}}+\frac{S_{g}^{2}}{n_{g}}}}\sim t_\nu$$ on $$\large\nu = \frac{\left(\frac{S_{v}^{2}}{n_{v}}+\frac{S_{g}^{2}}{n_{g}}\right)^{2}}{\frac{\frac{S_{v}^{2}}{n_{v-1}}^{2}}{n_{v-1}}+\frac{\frac{S_{g}^{2}}{n_{g-1}}^{2}}{n_{g-1}}}$$
+
+Amb aquesta distribució arribem a que $$\frac{\overline x_1 -\overline x_2 -(\mu_1-\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}\sim N(0,1)$$ pero com no es sap la desviació estandard, s'estima de manera que la distribució de referencia passa a ser una t d'Students: $$\frac{\overline x_1 -\overline x_2 -(\mu_1-\mu_2)}{\sqrt{\frac{S_1^2}{n_1}+\frac{S_2^2}{n_2}}}\sim t_\nu$$
+
+Amb aquest estadístic de prova i aquesta distribució de referència, és trivial trobar un interval de confiança del 95%.
+
+Si aquest interval d econfiança es troba amb el t.test, el resultat és el seguent:
+
+```{r}
+t_test_result$conf.int # Mateix interval que a l'apartat c
+```
+Per reduïr l'amplada d'aquest interval, podem fer-ho de dues maneres: augmentant el número de mostres ($n$) o reduïnt el nivell de confiança (el 95%).
+
+# Exercici 3
+
+Importem les dades de "Ocells2.csv"
+
+```{r}
+library(readr)
+ocells <- read.csv("Ocells2.csv", sep=",")
+```
+Es suposa que les dades segueixen una distribució geomètrica, de fòrmula $$p(X=k)=p(1-p)^{k-1}$$
+
+El test de hipotesis és $H_o:p=0.3,\quad H_1:p\neq0.3$.
+
+Per resoldre aquesta hipotesis s'utilitza el test de raó de versemblança, mitjançant la distribució $-2\log(\lambda(\underset\sim x))\sim\chi^{2}_d$.
+
+La funció de màxima verosimilitud per la distribució geomètrica és:
+$$L(p;\underline x)=\prod_{i=1}^n (p(1-p)^{k-1})=p^n\prod_{i=1}^n(1-p)^{k_i-1}$$
+
+Si s'hi aplica un logaritme: $$l(p;\underline x)=n\log(p)+\sum_{i=1}^n\log(1-p)^ {k-i}=n\log (p)+\log(1-p)\left[\sum_{i=1}^n(k_i)-n\right]$$
+
+Buscant el màxim d'aquesta funció es pot trobar la $p$ de màxima verosimilitud: $$l'(p,\underline x)=0\implies\frac n p -\frac 1{1-p}\left[\sum_{i=1}^n (k_i)-n\right]=0\implies p=\frac 1{\frac 1 n \sum_{i=1}^n k_i}=\frac 1{\overline k}$$
+
+Amb aquesta $p$ es pot trobar l'estadístic de prova, ja que $$-2\log(\lambda(\underline x))=-2(l(\overset\sim p;\underline x)-l(\hat p;\underline x))$$ on $\overset\sim p$ és l'estimador màxim versemblant en el submodel ($p=0.3$) i $\hat p$ és l'estimador màxim versemblant en el model general.
+
+Per tant, queda que l'estadístic de prova és $$-2\left(n(\log(0.3)-\log(\hat p))+\left[\sum_{i=1}^n (k_i) -n\right](\log(0.7)-\log(1-\hat p))\right)\sim\chi^{2}_d$$ on $d=\dim(\overset\sim p)-\dim(\hat p)=1-0=1$
+
+Al codi escrit a continuació s'elavoren tots els càlculs numèrics per resoltre el test de hipòtesis.
+
+```{r}
+alpha <- 0.05
+p <- 0.3
+n <- sum(ocells$Frequencia)
+sum_ki <- sum(ocells$Frequencia*ocells$Valor)
+mean_k <- sum_ki/n
+estad_prova <- -2*(n*(log(p)-log(1/mean_k))+(log(1-p)-log(1-1/mean_k))*(sum_ki-n))
+dist_ref <- qchisq(1-alpha, 1)
+
+estad_prova #Estadístic de prova
+dist_ref #Punt crític de la distribució de referència
+
+estad_prova >= dist_ref # Rebutjar si True
+
+p_value <- 1- pchisq(estad_prova, 1)
+
+alpha # Confiança que hem assignat a la hipòtesis
+p_value # p-valor de la distribució
+
+p_value <= alpha # Rebutjar si True
+
+```
+No rebutgem $H_o$, ja que l'estadístic de prova és menor al punt crític i el p-valor és superior a la confiança de la hipòtesis.
+
+Per tant, podem concloure que $p=0.3$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -4,47 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "0d92f53518d319b9",
+        "id": "0ae407164458dc49",
         "type": "tabs",
         "children": [
           {
-            "id": "4daacb7dce7728ac",
+            "id": "e6ba2f5beb17f934",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Q3/Senyals i sistemes/2. Convolución.md",
+                "file": "Q3/Química inorgànica/4. Cristales iónicos.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "eb62b28ca317467f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Q3/Senyals i sistemes/3. Transformada de Fourier.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "38f01fd9e49a9caf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Q3/Mètodes numèrics/2. Interpolación polinómica.md",
-                "mode": "source",
-                "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "4. Cristales iónicos"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -64,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -73,13 +52,15 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "estacionari",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -87,14 +68,17 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 266.5
+    "width": 266.5,
+    "collapsed": true
   },
   "right": {
     "id": "412b601ec2582522",
@@ -110,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Q3/Mètodes numèrics/2. Interpolación polinómica.md",
+                "file": "Q3/Teoria de la informació/3. Codificació de font.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +102,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 3. Codificació de font"
             }
           },
           {
@@ -127,10 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Q3/Mètodes numèrics/2. Interpolación polinómica.md",
+                "file": "Q3/Teoria de la informació/3. Codificació de font.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 3. Codificació de font"
             }
           },
           {
@@ -141,7 +129,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -150,8 +140,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Q3/Mètodes numèrics/2. Interpolación polinómica.md"
-              }
+                "file": "Q3/Teoria de la informació/3. Codificació de font.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 3. Codificació de font"
             }
           },
           {
@@ -163,7 +155,9 @@
                 "sortOrder": "frequency",
                 "showSearch": false,
                 "searchQuery": ""
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           },
           {
@@ -171,7 +165,9 @@
             "type": "leaf",
             "state": {
               "type": "advanced-tables-toolbar",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
         ],
@@ -192,54 +188,54 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "38f01fd9e49a9caf",
+  "active": "e6ba2f5beb17f934",
   "lastOpenFiles": [
-    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/html/practica5.pdf",
-    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/html/practica5.log",
-    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/html/practica5.fo",
-    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/html/practica5.xsl",
-    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/html/practica5.xml",
-    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/html/practica5Dom.xml",
-    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/html",
-    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/plot_lag.m",
-    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/generar_punts.asv",
-    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/mat_lag.m",
-    "Q3/Mètodes numèrics/Matlab/Practiques/practica5/lag_card.m",
-    "Q3/PiE 2/3. Intervals de confiança.md",
-    "Q3/PiE 2/2. Distribucions de probabilitat.md",
-    "Q3/PiE 2/1. Introducció a la estadística.md",
-    "Q3/Química inorgànica/3. Enlace metálico.md",
-    "Q3/PiE 2/R code/Entregable 1/Entreagble1.knit.md",
-    "Q3/Química inorgànica/2. Enlace covalente.md",
-    "Q3/Química inorgànica/1. Sistema periódico de los elementos.md",
-    "Q3/PiE 2/4. Tests d'hipòtesis.md",
-    "Q3/Senyals i sistemes/3. Transformada de Fourier.md",
-    "Q3/Senyals i sistemes/2. Convolución.md",
-    "Q3/Mètodes numèrics/2. Interpolación polinómica.md",
-    "Images&Links/Pasted image 20241007215358.png",
-    "Q3/PiE 2/R code/Tema3/ex10.knit.md",
-    "Q2/PiE/7. Estimació puntual.md",
-    "Q2/PiE/6. Població i mostra.md",
-    "Q2/Física 2/2. Electromagnetismo.md",
-    "Q3/Bases de dades/4. Components lògiques d'una base de dades.md",
     "Q3/Teoria de la informació/2. Informació i entropia.md",
-    "Q3/Senyals i sistemes/1. Señales y sistemas.md",
-    "Q3/Teoria de la informació/3. Codificació de font.md",
+    "Q3/Teoria de la informació/4. Codificació de canal.md",
     "Q3/Bases de dades/5. Disseny de bases de dades relacionals.md",
-    "Q1/Física/2.Cinemática.md",
-    "Q1/Física/3.Fuerzas y ecuaciones del movimiento.md",
-    "Q2/Física 2/3. Conductores y corriente.md",
-    "Q2/Física 2/4. Magnetostàtica.md",
+    "Q3/Bases de dades/6. Transaccions i concurrències.md",
+    "Q3/Mètodes numèrics/2. Interpolación polinómica.md",
+    "Q3/Senyals i sistemes/2. Convolución.md",
+    "Q3/Senyals i sistemes/3. Transformada de Fourier.md",
+    "Q3/PiE 2/4. Tests d'hipòtesis.md",
+    "Q3/PiE 2/R code/Entregable 1/entregable-1_final_final.aux",
+    "Q3/PiE 2/R code/Entregable 1/entregable-1_final_final.tex",
+    "Q3/PiE 2/R code/Entregable 1/entregable-1_final_final.knit.md",
+    "Q3/PiE 2/R code/Entregable 1/entregable-1_final_final_files/figure-latex/unnamed-chunk-5-1.pdf",
+    "Q3/PiE 2/R code/Entregable 1/entregable-1_final_final_files/figure-latex/unnamed-chunk-1-2.pdf",
+    "Q3/PiE 2/R code/Entregable 1/entregable-1_final_final_files/figure-latex/unnamed-chunk-1-1.pdf",
+    "Q3/PiE 2/R code/Entregable 1/entregable-1_final_final_files/figure-latex",
+    "Q3/PiE 2/R code/Entregable 1/entregable-1_final_final_files",
+    "Q3/PiE 2/R code/Entregable 1/entregable-1_final_final.Rmd",
+    "Q3/Mètodes numèrics/Matlab/Practiques/Practica 6/practica_6.asv",
+    "Q3/Mètodes numèrics/Matlab/Practiques/Practica 6/interpol_Lag.asv",
+    "Q3/PiE 2/R code/Entregable 1/Entreagble1.knit.md",
+    "Q3/PiE 2/R code/Entregable 1/entregable-1-Eki.knit.md",
+    "Q3/PiE 2/R code/entregable-1-Eki.knit.md",
+    "Q3/Química inorgànica/4. Cristales iónicos.md",
+    "Q3/PiE 2/R code/Entregable 1/Entreagble1_files/figure-html/unnamed-chunk-7-1.png",
+    "Q3/PiE 2/R code/Entregable 1/Entreagble1_files/figure-html/unnamed-chunk-2-1.png",
+    "Images&Links/Pasted image 20241022181553.png",
+    "Images&Links/Pasted image 20241022181455.png",
+    "Images&Links/Pasted image 20241022181436.png",
+    "Images&Links/Pasted image 20241022175337.png",
+    "Images&Links/Pasted image 20241022174309.png",
+    "Q2/PiE/2. Variables aleatories.md",
+    "Q3/PiE 2/2. Distribucions de probabilitat.md",
+    "Q3/PiE 2/3. Intervals de confiança.md",
     "Q3/Mètodes numèrics/1. Equacions transcendentals.md",
-    "Q3/Horari Q3.png",
-    "Q3/Schedule(2).png",
-    "Q3/Horari Personal.png",
-    "Q3/Schedule(3).png",
-    "Schedule(3).png",
-    "Schedule(2).png",
-    "Schedule.png",
-    "Images&Links/Pasted image 20240508094613.png",
-    "Images&Links/Pasted image 20240506154320.png",
+    "Images&Links/Pasted image 20241021182358.png",
+    "Images&Links/Pasted image 20241021181445.png",
+    "Q3/Química inorgànica/3. Enlace metálico.md",
+    "Images&Links/Pasted image 20241021174935.png",
+    "Q3/Teoria de la informació/1. Codis i codificació.md",
+    "Q3/Química inorgànica/1. Sistema periódico de los elementos.md",
+    "Q3/PiE 2/1. Introducció a la estadística.md",
+    "Q3/Química inorgànica/2. Enlace covalente.md",
+    "Q3/Química inorgànica/0. Quàntica.md",
+    "Q3/Teoria de la informació/3. Codificació de font.md",
+    "Q3/Teoria de la informació/0. Introducció.md",
+    "Q3/Bases de dades/2. Model relacional.md",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]

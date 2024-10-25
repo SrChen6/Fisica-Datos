@@ -115,7 +115,7 @@ end
 % A baix apareixen les funcions que s'han escrit en arxius diferents i que
 % el publish no inclou, per tal de que el profe corregeixi s'afegeixen com
 % a comentaris.
-%{
+
 function [xk, fk, it] = newtonB(x1, tol, itmax, fun, param)
     %x1: punt inicial       tol: interval tolerancia
     it = 0;
@@ -149,7 +149,3 @@ function deriv = deriv(f, x0)
     Ax = 10 ^ -10; % arbitrary small number, to represent infinitessimal increase
     deriv = (f(x0 + Ax) - f(x0)) / Ax;
 end
-%}
-
-
-

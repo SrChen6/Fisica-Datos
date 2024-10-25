@@ -101,7 +101,7 @@ disp(['Angle mínim: ' num2str(angles(i))])
 % la funció convergeix molt més lent.
 
 %% Altres funcions
-%{
+
 function y = parabola_y(x, al)
     g = 9.81;
     vo = 37;
@@ -110,30 +110,30 @@ function y = parabola_y(x, al)
     v_oy = vo*sin(al);
     y=(v_oy/v_ox).*x-(1/2)*g*(x/v_ox).^2;
 end
-%}
 
-%{
+
+
 function y = y(x)
     a = .15;
     b = .04;
     y = a*x.^2.*exp(-b*x);
 end
-%}
 
-%{
+
+
 function f = F(x, al)
     f = y_parab(x, al)-y_mont(x);
 end
-%}
 
-%{
+
+
 function deriv = deriv_param(f, x0, param)
     Ax = 10 ^ -10; % arbitrary small number, to represent infinitessimal increase
     deriv = (f(x0 + Ax, param) - f(x0, param)) / Ax;
 end
-%}
 
-%{
+
+
 function [xk, fk, it] = newton(x1, tol, itmax, fun, param)
     %x1: punt inicial       tol: interval tolerancia
     it = 0;
@@ -149,9 +149,9 @@ function [xk, fk, it] = newton(x1, tol, itmax, fun, param)
         it = it + 1;
     end
 end
-%}
 
-%{
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %  Ajusta una recta y = a x + b als vectors x, y.
@@ -191,4 +191,3 @@ d=ax-c*ay;
 %n,r,a,b,ax,ay,ax2,ay2,axy;
 
 end
-%}
