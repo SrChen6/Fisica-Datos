@@ -1,0 +1,57 @@
+---
+title: "ex_1"
+author: "Haokang Chen"
+date: "2024-11-17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readr)
+word_recall <- read.csv("wordrecall.csv", sep = ",")
+```
+
+En un experiment de retenció de memòria es va demanar a 13 participants que memoritzessin una llista de paraules. A continuació, els participants havien d’intentar recordar totes les paraules de la llista en diferents moments. Les dades estan desades al fitxer wordrecall.csv. Al fitxer, hi trobareu la proporció de paraules recordades correctament (prop) en diversos intervals de temps des que es va memoritzar la llista (time, en minuts).
+
+a) Grafiqueu la proporció a l’eix y i el temps a l’eix x. Creieu que té sentit ajustar un model lineal?
+```{r}
+x <- word_recall$time
+y <- word_recall$prop
+
+# Scatterplot
+plot(x, y, main = "Scatterplot of x and y", xlab = "X-axis", ylab = "Y-axis")
+
+```
+No té sentit que el model sigui lineal.
+
+
+b) Transformeu la variable temps amb la funció logaritme. Repetiu el gràfic de l’apartat anterior amb el logaritme del temps. Què hi veieu? Té sentit ajustar un model lineal ara?
+
+```{r}
+x <- word_recall$time
+y <- word_recall$prop
+
+# Scatterplot
+plot(log(x), y, main = "Scatterplot of x and y", xlab = "X-axis", ylab = "Y-axis")
+
+```
+
+c) Ajusteu un model lineal (amb o sense transformació del temps, segons el vostre criteri). Interpreteu l’ordenada a l’origen ajustada i el pendent ajustat. Comenteu la R2 del model i la seva bondat d’ajust tot mirant els residus.
+
+```{r}
+model1 <- lm(y ~ x)
+model2 <- lm(y ~ log(x))
+```
+
+
+d) Feu una predicció puntual i un interval de predicció a nivell 95% de la proporció de paraules que un individu recorda passades 3h des que va veure la llista
+
+```{r}
+coefs <- model2$coefficients
+log_p3 = coefs[1]+3*60*60*coefs[2]
+p3 = 10^log_p3
+
+```

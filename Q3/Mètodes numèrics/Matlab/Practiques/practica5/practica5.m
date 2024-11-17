@@ -5,7 +5,7 @@ n=3;
 m = 600; %De prova
 
 M = mat_lag(n, m);
-
+z = generar_punts(m);
 %% Apartat b
 m = 600;
 
@@ -107,6 +107,7 @@ function leb = lebesgue(M)
 
     leb = abs(M)*vect;
     leb = leb';
+    disp(leb)
 end
 
 function lag_card = lag_card(x, z, i, n)
