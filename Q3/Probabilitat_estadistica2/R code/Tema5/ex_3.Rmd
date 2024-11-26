@@ -1,0 +1,75 @@
+---
+title: "ex_3"
+author: "Haokang Chen"
+date: "2024-11-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+C=c(2,5,10,20,50,100)
+L=c(85, 107, 124, 140, 161, 179)
+```
+
+Per $\alpha=0.05$:
+
+- Estimacions dels paràmetres:
+
+```{r}
+plot(x = log(C), L)
+mod_log = lm(L ~ log(C))
+abline(mod_log, col = "red")
+summary(mod_log)
+```
+
+Són significatius perquè són diferents a 0 i la $R^2$ és molt propeta a 1.
+
+- Interpretació dels paràmetres:
+Intercept: major que 0 perquè hi ha altres ions en el gas
+log(C): a més molècules d'amoníac major és la potència.
+
+- Variància:
+```{r}
+p = 2 #Nombre de paràmetres
+n = length(C) #Nombre de graus de llibertat
+var = sum(resid(mod_log)^2)/(n-p) # Estimació de la variancia
+summary(mod_log)
+0.589^2 #Agafant el Residual standard error del summary i elevant-lo al quadrat s'obté la variancia
+var
+```
+
+- Outlayers?
+No n'hi ha, ja que els errors són tots molt petits
+
+- Estudi de residus:
+```{r}
+plot(x = predict(mod_log), y = resid(mod_log))
+plot(x = predict(mod_log), y = rstandard(mod_log))
+hist(rstandard(mod_log))
+```
+- Reformulació del model
+??
+
+
+- Concentració per L=167mV
+```{r}
+# trobar C tal que L = 167mV
+Lobj = 167
+b = coef(mod_log)
+# això és C
+Cobj = exp((Lobj-b[1])/b[2]) #Aïllant C del model
+# això és log C
+logC = (Lobj-b[1])/b[2] #Valor predit per log(C)
+b[1]+b[2]*logC #Si dona 167 és que el model funciona
+# funciona!
+```
+
+- Interval de confiança i interval de predicció per la concentració anterior
+```{r}
+new = data.frame(C = Cobj)
+predict(mod_log, newdata = new, interval = "prediction")
+predict(mod_log, newdata = new, interval = "confidence")
+```

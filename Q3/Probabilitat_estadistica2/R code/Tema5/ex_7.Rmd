@@ -1,0 +1,76 @@
+---
+title: "ex_7"
+author: "Haokang Chen"
+date: "2024-11-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#############
+# Starbucks #
+#############
+
+library(tidyverse, warn.conflicts = FALSE)
+library(GGally, warn.conflicts = FALSE)
+starbucks = read.csv("http://vicpena.github.io/pie2/starbucks.csv", sep = ";")
+starplot = starbucks %>% select(-X, -item, -type)
+ggpairs(starplot)
+```
+
+- Correlacions: Per sobre de 0.75 és alt i seran linealment independents
+
+```{r}
+ggplot(starbucks) +
+  aes(x=carb, y=calories, color=type) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+```{r}
+
+mod = lm(calories ~ fat + carb + fiber + protein, data = starbucks)
+summary(mod)
+
+```
+
+```{r}
+
+# hi traiem la fibra
+mod1 = lm(calories ~ fat + carb + protein, data = starbucks)
+summary(mod1)
+
+```
+
+```{r}
+# obs. amb màxim residu
+
+starbucks$absresid = abs(residuals(mod1))
+
+starbucks %>% slice_max(absresid) %>% select (item, calories, fat, carb, protein)
+
+head(starbucks)
+
+```
+
+
+```{r}
+#Alternativament
+starbucks[which.max(abs(resid(mod1))),]
+
+```
+
+```{r}
+# prediccions pel McDonalds
+newitems = data.frame(item = c("Big Mac", "Cheeseburger", "McDouble", "Cookie"),
+                      fat = c(28, 11, 17, 7),
+                      carb = c(45, 33, 34, 22),
+                      fiber = c(3, 2, 2, 1),
+                      protein = c(24, 15, 21, 2),
+                      type = c("other", "other", "other", "bakery"))
+predict(mod1, newdata = newitems)
+# molt bé!
+```

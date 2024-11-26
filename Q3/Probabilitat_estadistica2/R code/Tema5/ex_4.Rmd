@@ -1,0 +1,148 @@
+---
+title: "ex_4"
+author: "Haokang Chen"
+date: "2024-11-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+colest <- read.csv2("COL.csv", sep=";")
+n <- dim(colest)[1]
+n
+p <- 4
+```
+# Estudi del model
+
+Quan es tenen més de 2 paràmetres, es plottegen totes en una matriu
+
+```{r}
+scatterplotMatrix(colest, smooth = FALSE, diagonal = FALSE)
+```
+
+
+```{r}
+mod <- lm(C~W+A+H, colest)
+summary(mod)
+```
+$$\hat\beta=(Intercept, W, A, H)$$
+
+residual standard error: estimació de la desviació estandard, la variancia és $30,11^2$
+t-value: mira si el paràmetre és estadísticament 0.
+p-valor < 0.05 es rebutja la hipotesis nula (el paràmetre és 0)
+F-statistic: omnibus, hipotesis nula: tots 0 menys $\beta_o$
+
+## Visualització dels errors
+
+```{r}
+plot(mod, ask =F)
+```
+
+- Fitted: $$\hat Y=\hat\beta_o + \hat\beta_1 X_1 +\hat\beta_2 X_2 +\hat\beta_3 X_3$$
+Sabent $X_1,X_2,X_3$ es pot trobar l'hiperplà on viuen les observacions
+
+Eix x: valor de $\hat y_i$
+Eix y: error de l'observació
+
+No hi ha d'haver patrons. La vermella ha de ser similar a una recta
+
+Homocedesticitat: els errors han de tenir mes o menys la mateixa amplada
+
+- Q-Q Residuals: Quantile-Quantile
+Eix X: Quantils teòrics
+Eix Y: standarized residuals
+
+Mira si els errors estandaritzats $\frac{\hat e}{\sqrt{Var(\hat e)}}$ segueixen una normal $N(0,1)$
+Per mirar això, es mira la distribució acumulada amb un canvi de varible tal que queda una recta.
+Si els punts segueixen la recta, els errors estandaritzats segueixen la normal $N(0,1)$
+
+- Standarized residuals vs Fitted
+
+Similar a la 1ª (Fitted), es mira si la variancia es constant mirant si es segueix una recta
+
+- Residuals vs Leverage
+Mira si hi ha un Pau Gasol a les dades mirant la distància de Cook 
+
+```{r}
+plot(predict(mod), resid(mod))
+abline(h=0, lty=2)
+```
+
+
+```{r}
+plot(rstandard(mod))
+abline(h=c(-2, 0, 2), lty=2)
+```
+
+```{r}
+plot(rstudent(mod), main="rstudent")
+abline(h=c(-2, 0, 2), lty=2)
+```
+
+
+```{r}
+plot(hatvalues(mod))
+abline(h=c(0,2*mean(hatvalues(mod))),lty=2)
+abline(h=c(0,3*p/n))
+```
+
+# Intervals de confiança
+
+Es poden trobar IC(parametre), IC(observació) i IP(individu)
+
+```{r}
+confint(mod, level=0.99)
+```
+
+## Interval de predicció
+
+Per $W=65, A=15, H=150$
+Predicció puntual: $$\hat y_i =\hat \beta_o+\hat\beta_1*65+\hat\beta_2*15+\hat\beta_3*150=\hat\mu_i$$
+
+```{r}
+C0<-data.frame(cbind(W=c(65,75,65),A=c(15,15,12),H=c(150,150,150)), row.names=1:3)
+predict(mod, C0, interval="confidence", level=.95, se.fit=T)
+```
+fit: predicció puntual
+lwr-upr: interval que conté amb 99% prob al colesterol amb les condicions de l'observació.
+se-fit: error estàndard.
+
+
+# Colinealitat
+
+```{r}
+vif(mod)
+```
+
+Dona el variance inflation factor del model. Per sobre de 5 és massa gran , hi ha colinealitat.
+Es veu que el pes depen dels altres parametres. Suposem que es cert que $$P=-10+0.5H$$.
+
+En comptes de pes, estudiem l'excés de pes:
+
+```{r}
+newmod <- lm(C~I(W-(-10+0.5*H))+A+H, colest)
+summary(newmod)
+```
+Notem que la altura ara és irrellevant ($Pr(>|t|) > 0.05$)
+
+Ajustant el model sense alçada: 
+
+```{r}
+colest$WE<-colest$W-0.5*colest$H+10
+scatterplotMatrix(colest,smooth=F,diagonal=F)
+```
+
+
+```{r}
+renewmod<-lm(C~I(W-(-10+0.5*H))+A, colest)
+summary(renewmod)
+```
+
+```{r}
+vif(renewmod)
+```
+
+Amb aquest model no hi ha colinealitat i els paràmetres són tots rellevants.

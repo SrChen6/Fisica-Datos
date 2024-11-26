@@ -1,0 +1,65 @@
+---
+title: "ex_2"
+author: "Haokang Chen"
+date: "2024-11-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Enunciat
+En un estudi per estudiar el nivell de colesterol en sang, en persones en edat de creixement (9-20 anys),s’ha plantejat un model per explicar el nivell de colesterol (C) en funció del pes (P ), edat (E) i alçada(H). És conegut que el pes és un dels factors que influeixen en l’augment del nivell de Colesterol, i es vol aprofundir en aquest fet. Les dades experimentals són independents i estan en el fitxer “col.csv”. 
+
+```{r}
+library(car)
+library(HH)
+
+COL <- read.csv2("COL.csv", sep=";")
+```
+a) Per començar plategeu la recta de regressió del colesterol respecte el pes.
+(1) Trobeu l’estimació dels coeficients de la recta de regressió i de la variància del error, i interpreteu-los.
+```{r}
+head(COL)
+
+pes <- COL$W
+coles <- COL$C
+plot(pes, coles)
+
+
+model <- lm(C ~ W, data = COL)
+abline(model, col = "red")
+
+
+summary(model)
+```
+
+(2) Dieu si el pes explica, en part, la variabilitat en el nivell de colesterol. Veieu alguna contradicció en els resultats?
+
+$R^2=.1362$, per tant la regressió és mala. A més, s'esperaria una relació positiva, però surt negativa. 
+
+(3) Dibuixeu, juntament amb les dades la banda de confiança del 99 juntament amb la de predicció del nivell de colesterol en funció del pes.
+
+```{r}
+ci.plot(model, conf.level = 0.99)
+```
+
+
+(4) Utilitzant l’anàlisi dels residus, dieu si el model es pot acceptar com a correcta o no.
+Nota: per entendre millor el que passa, feu la gràfica (amb recta de regressió) del colesterol respecte
+el pes agrupats per edats, podeu fer-la amb la comanda:
+scatterplot(C~P|E,smooth=F,col=1:20,data=...)
+Quines conclusions treieu del gràfic anterior?
+
+```{r}
+plot(x = predict(model), y = resid(model))
+plot(x = predict(model), y = rstandard(model))
+hist(rstandard(model))
+
+scatterplot(C ~ W | A, 
+            smooth = F,
+            col = 1:20, 
+            data = COL)
+```

@@ -8,6 +8,6 @@
     "downscalePercent": 100
   },
   "showLineNumber": false,
-  "livePreview": true,
+  "livePreview": false,
   "defaultViewMode": "source"
 }
